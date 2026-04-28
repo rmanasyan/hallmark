@@ -2,7 +2,9 @@
 
 Most AI-generated UIs are visually distinct but structurally identical: hero → three features → CTA → footer. Same heading positions, same column counts, same component vocabulary. **Structural sameness is the AI fingerprint, not visual sameness.** Hallmark's job is to break it.
 
-This file catalogues the axes of structural variety. Pick one option from each axis to form a *structural fingerprint*. Two pages should never share the same fingerprint.
+This file catalogues the **primitive axes** of structural variety. For most builds you should NOT compose a fingerprint axis-by-axis from this file — instead pick a named whole-page shape from [`macrostructures.md`](macrostructures.md), which is faster and prevents default-attractor sameness. Use this file when you need to deviate from a macrostructure's defaults on one or two axes, or when you're auditing an existing page and need vocabulary for what you see.
+
+The axes below are still the building blocks. Pick one option from each to form a *structural fingerprint*. Two pages should never share the same fingerprint.
 
 ## The six axes
 
@@ -87,22 +89,24 @@ Two rules govern choices:
 
 ## Theme-suggested fingerprints
 
-Each Hallmark theme has a default structural fingerprint. Use them as starting points, deviate when the brief demands.
+Each Hallmark theme has a default structural fingerprint. Use them as starting points only when the brief specifies a theme. **For most builds, pick a macrostructure from [`macrostructures.md`](macrostructures.md) instead** — themes describe *visual surface*, macrostructures describe *page shape*; the latter drives variety more.
+
+The table below is alphabetical by theme to neutralise any "first row = default" attractor. No theme is the default.
 
 | Theme | Heading | Body | Divider | Button | Image | Reveal |
 | --- | --- | --- | --- | --- | --- | --- |
-| Specimen | Left-margin | Asymmetric spans | Hairline | Outlined | None | Fade-up |
-| Midnight | Numbered display | Single column | Hairline | Typographic-only | None | Typewriter |
+| Almanac | Sticky | Three-column equal | Hairline | Outlined | Inline | Number-tick |
+| Atelier | Centered | Single column | Negative space | Typographic-only | Tightly cropped | Type-unmask |
 | Brutal | Overlapping image | Full-bleed reset | Bleed-colour | Oversized solid | Full-bleed | Horizontal sweep |
 | Garden | Hanging | Marginalia | Negative space | Unstyled link | Margin-aligned | None |
-| Atelier | Centered | Single column | Negative space | Typographic-only | Tightly cropped | Type-unmask |
-| Newsprint | Bottom-aligned | Multi-column justified | Double rule | Outlined | Inline | None |
-| Terminal | Inline (with `>` prompt) | Single column | Negative space | Typographic-only `[ go ]` | None | Typewriter |
-| Manifesto | Overlapping image | Full-bleed reset | Bleed-colour | Oversized solid | Full-bleed | Horizontal sweep |
-| Salon | Centered | Single column narrow | Ornament (fleuron) | Outlined | Tightly cropped | None |
 | Linen | Hanging | Two-column asymmetric | Negative space | Unstyled link | Margin-aligned | Fade-up |
-| Almanac | Sticky | Three-column equal | Hairline | Outlined | Inline | Number-tick |
+| Manifesto | Overlapping image | Full-bleed reset | Bleed-colour | Oversized solid | Full-bleed | Horizontal sweep |
+| Midnight | Numbered display | Single column | Hairline | Typographic-only | None | Typewriter |
+| Newsprint | Bottom-aligned | Multi-column justified | Double rule | Outlined | Inline | None |
+| Salon | Centered | Single column narrow | Ornament (fleuron) | Outlined | Tightly cropped | None |
+| Specimen | Left-margin | Asymmetric spans | Hairline | Outlined | None | Fade-up |
 | Sport | Numbered display | Asymmetric spans | Bleed-colour | Oversized solid | Full-bleed | Horizontal sweep |
+| Terminal | Inline (with `>` prompt) | Single column | Negative space | Typographic-only `[ go ]` | None | Typewriter |
 
 ## Anti-patterns of structural sameness
 
@@ -116,10 +120,12 @@ Reject these structural fingerprints. They are the AI-template fingerprint.
 
 ## When you don't know
 
-If the brief doesn't suggest a fingerprint and the user hasn't picked a theme, ask:
+If the brief doesn't suggest a fingerprint and the user hasn't picked a theme, **do not default**. Offer the user three named macrostructures from *categorically different* groups, and let them pick. For example:
 
-> One word for the *feeling* of this page — editorial, brutalist, soft, technical, luxury, austere, playful?
+- **Bento Grid** — modular, feature-led, many entry points.
+- **Long Document** — prose-led, one continuous narrative, no marketing structure.
+- **Manifesto** — declarative large type, one belief per fold, polemical.
 
-Their answer maps to a theme; the theme maps to a fingerprint. Proceed.
+Three concrete page-shapes beat seven abstract tones. If the user shrugs and says "you pick", roll a die: pick whichever of the three is most *categorically distant* from any previous Hallmark output for this user (read the existing CSS for a `/* Hallmark · macrostructure: ... */` stamp and avoid that family).
 
-If they answer "modern", "clean", or "professional", say so isn't a feeling and ask again.
+If the user answers a vague tone word ("modern", "clean", "professional"), that is not a feeling. Re-ask with the three concrete macrostructures above.

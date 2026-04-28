@@ -56,6 +56,22 @@ A card with a thick coloured border on one edge (usually left, 4–6px, purple o
 
 **Fix.** Tint toward your anchor hue. See [`color.md`](color.md).
 
+### Default-attractor sameness
+
+Two consecutive Hallmark outputs in the same project use the same macrostructure. The first emitted left-margin numbered labels + huge serif + asymmetric spans (Specimen); the second did exactly the same. The page looks redesigned only because copy changed.
+
+**Why it fails.** Hallmark's whole point is that two pages for two briefs feel like *different sites*, not colour-swaps of one template. Repeating a macrostructure across outputs is the structural fingerprint of templating, which is the AI tell Hallmark exists to defeat.
+
+**Fix.** Before writing code, look in the project's CSS for a `/* Hallmark · macrostructure: <name> · ... */` stamp. If one exists, your pick must be a different macrostructure — categorically different where possible (a serif-led editorial macrostructure paired with a sans-led grid one, not two editorial variants). See [`macrostructures.md`](macrostructures.md) for the twenty-one named choices.
+
+### Specimen fall-through
+
+Producing the Specimen macrostructure (numbered left-margin labels like `01 — HELLO.` + huge serif display + asymmetric spans + hairline rules + typographic-only CTA + sometimes a hand-drawn SVG accent) when the brief did not explicitly request editorial / foundry / specimen energy. This is the single most-repeated Hallmark output, and it's the reason the skill felt like it had one shape.
+
+**Why it fails.** Specimen is a beautiful pattern when the brief is editorial. Applied to a SaaS pricing page, a developer tool, an e-commerce site, or a personal app, it looks like the AI defaulted — because it did.
+
+**Fix.** The Specimen macrostructure is one of twenty-one in [`macrostructures.md`](macrostructures.md), not a default. If the brief is vague, pick from the first ten in that file (Bento Grid, Long Document, Marquee Hero, Stat-Led, Workbench, Conversational FAQ, Manifesto, Photographic, Quote-Led, then Specimen). Reach for Specimen only when the brief explicitly says "editorial", "specimen sheet", "type foundry", or names the Specimen theme.
+
 ---
 
 ## Major (looks AI-generated)

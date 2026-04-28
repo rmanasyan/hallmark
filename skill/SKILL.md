@@ -45,18 +45,21 @@ If any of the three is missing, ask for it in one short message. Ask for all mis
 
 Once you have the three, restate them in one sentence and proceed.
 
-### 2. Pick a structural fingerprint
+### 2. Pick a macrostructure FIRST
 
-Before loading the visual ruleset, decide the **structural fingerprint** of this page along these axes (one decision each — see [`references/structure.md`](references/structure.md) for the full catalogue):
+Before loading any visual ruleset, **pick one of the twenty-one named macrostructures in [`references/macrostructures.md`](references/macrostructures.md).** Each macrostructure is a complete page-shape — heading placement, body composition, divider language, button voice, image treatment, reveal — bundled as a single named choice. Picking one named macrostructure is faster and more varied than choosing six independent axes from scratch.
 
-- **Section-heading placement.** Left margin / hanging / centered / bottom-aligned / overlapping image / sticky / numbered display / inline.
-- **Body composition.** Single column / two-column asymmetric / multi-column justified / marginalia / three-column equal / full-bleed with reset / asymmetric spans.
-- **Divider language.** Hairline rule / ornament / negative space / bleed-color block.
-- **Button voice.** Outlined / unstyled link / oversized solid / typographic-only.
-- **Image treatment.** Full-bleed / tightly cropped / inline / margin-aligned / none.
-- **Reveal pattern.** Fade-up stagger / horizontal sweep / type-unmask / number-tick / typewriter / none.
+**Diversification rule (mandatory).** Before you pick:
 
-Pick a *combination*. The combination is the page's voice. Two combinations should never be identical across pages you build for the same user. If a previous page in this session used left-margin labels with hairline dividers, this one should not.
+1. Look in the target codebase for an existing `/* Hallmark · macrostructure: <name> · ... */` stamp at the top of any CSS file. If you find one, your pick must be a *different* macrostructure.
+2. If you have produced any other Hallmark output for this user in this session, your pick must be a different macrostructure than the last one.
+3. **The Specimen macrostructure (numbered left-margin labels + huge serif + asymmetric spans + typographic CTA) is no longer a default.** Reach for it only when the brief is explicitly editorial, foundry-adjacent, or the user has named it.
+
+**State your pick.** Before writing any code, say "Macrostructure: <name>." in plain text. This is a deliberate accountability step — picking on the page (not in your head) prevents the default-attractor sameness that kept the skill emitting Specimen output.
+
+If the brief is genuinely vague (no theme, no tone), do **not** default. Offer the user three macrostructures from *categorically different* groups (e.g. one grid-led like Bento, one document-led like Long Document, one poster-led like Manifesto). Three concrete choices, not seven abstract tones.
+
+The macrostructure picks five of the six structural axes for you; you only need to pick the reveal yourself. The deeper axis catalogue is still in [`references/structure.md`](references/structure.md) when you need to deviate from the macrostructure's defaults.
 
 ### 3. Load the visual ruleset
 
@@ -65,7 +68,9 @@ The non-negotiables live in [`references/`](references/). Read only what you nee
 - [`typography.md`](references/typography.md) — fonts, scale, pairing, weights, measure
 - [`color.md`](references/color.md) — OKLCH, palette construction, accent discipline, dark mode
 - [`layout-and-space.md`](references/layout-and-space.md) — 4pt scale, grid-breaks, asymmetry, depth
-- [`structure.md`](references/structure.md) — heading patterns, body composition, dividers, component voice, reveal style
+- [`macrostructures.md`](references/macrostructures.md) — twenty-one named whole-page shapes (Bento Grid, Long Document, Marquee Hero, Stat-Led, Workbench, etc.); pick one before writing code
+- [`component-cookbook.md`](references/component-cookbook.md) — thirty-two component archetypes (six hero shapes, five section-head shapes, five feature blocks, four CTA shapes, four testimonials, four footers, four navigations) you can compose into any macrostructure
+- [`structure.md`](references/structure.md) — the six primitive axes underlying the macrostructures, for when you need to deviate
 - [`motion.md`](references/motion.md) — durations, easings, what to animate, reduced-motion
 - [`microinteractions.md`](references/microinteractions.md) — per-interaction recipes (button press, focus, modal, toast, optimistic update, command palette, drag, copy-to-clipboard, search-as-you-type) and the named microinteraction tells
 - [`interaction-and-states.md`](references/interaction-and-states.md) — the eight states, focus, hit-targets, forms
@@ -73,7 +78,7 @@ The non-negotiables live in [`references/`](references/). Read only what you nee
 - [`copy.md`](references/copy.md) — verbs, labels, error structure, link text
 - [`anti-patterns.md`](references/anti-patterns.md) — the named tells you must not emit
 
-For most design work you need `typography`, `color`, `layout-and-space`, `structure`, and `anti-patterns`. **Load `microinteractions` whenever the output has *any* interactive element** — buttons, links, inputs, forms, modals, tabs, dropdowns, toasts, drag handles, command palettes, copy buttons, anything with hover/focus/active states. That is most pages.
+For most design work you need `macrostructures`, `component-cookbook`, `typography`, `color`, `layout-and-space`, and `anti-patterns`. **Load `microinteractions` whenever the output has *any* interactive element** — buttons, links, inputs, forms, modals, tabs, dropdowns, toasts, drag handles, command palettes, copy buttons, anything with hover/focus/active states. That is most pages.
 
 ### 4. Build
 
@@ -91,10 +96,11 @@ Always:
 - Include `:focus-visible` with a visible ring at ≥3:1 contrast. **Never animate the ring's appearance** — it must show instantly on focus.
 - For each interaction in the output (button, input, modal, toast, drag, copy, etc.), apply the recipe in [`microinteractions.md`](references/microinteractions.md). Pick *silent success* over celebratory toasts. Pick *optimistic update + Undo* over confirmation dialogs. Pick *delay 800ms* on hover tooltips and *0ms* on focus tooltips.
 - Cut motion before adding it. Most pages have too much, not too little. If removing an animation wouldn't lose the user information, remove it.
+- **Stamp the output.** The first non-empty line of the produced CSS file (or the top of `<style>` if inline) MUST be a comment of the form: `/* Hallmark · macrostructure: <name> · tone: <tone> · anchor hue: <hue> */`. This stamp is the durable record of what you chose. The next time Hallmark runs in this project, it reads the stamp and picks a *different* macrostructure.
 
 ### 5. The slop test
 
-Before handing back, run the output through these twenty questions. Every answer must be **no**.
+Before handing back, run the output through these twenty-three questions. Every answer must be **no**.
 
 **Visual:**
 
@@ -124,6 +130,12 @@ Before handing back, run the output through these twenty questions. Every answer
 18. Are tooltip hover-delay and focus-delay equal? (Hover should delay 800–1000 ms; focus should be 0 ms.)
 19. Is auto-rotating content (carousel, banner, stats) lacking pause-on-hover-and-focus? (WCAG 2.2.2.)
 20. Is there a placeholder name "Jane Doe / John Smith" or a startup cliché (Acme, Nexus, Seamless, Unleash)?
+
+**Variety:**
+
+21. Is the `/* Hallmark · macrostructure: <name> · ... */` stamp missing from the top of the CSS? (It must be present.)
+22. Is the macrostructure I picked the same as a previous Hallmark output's stamp in this project? (Read the file system; if a stamp exists, mine must differ.)
+23. Did I default to the **Specimen** macrostructure (numbered left-margin labels + huge serif + asymmetric spans + typographic-only CTA) when the brief did not explicitly call for editorial / foundry / specimen energy? (Specimen fall-through is banned.)
 
 If any answer is yes, fix it. Do not ship slop.
 
