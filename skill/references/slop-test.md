@@ -1,4 +1,4 @@
-# Slop test — 38 gates
+# Slop test — 45 gates
 
 Run this list before handing back any output. Every answer must be **no**. Update the Step 5 preview block's `Slop test` row to reflect the actual outcome of this run.
 
@@ -73,6 +73,23 @@ Some gates are **universal** (apply to every genre); some are **genre-scoped** (
 36. Does the page horizontally scroll on any viewport between 320 px and 1920 px? Open the rendered page; drag the dev-tools width slider across that range. If a horizontal scrollbar appears at any width, fail. The fix is `html { overflow-x: clip; }` plus `body { overflow-x: clip; }` as a safety net for any clipped-edge enrichment that pushes past the viewport. Use `overflow-x: clip` (not `hidden`) — `clip` preserves `position: sticky` and `position: fixed` on descendants. (Cross-reference: [`layout-and-space.md` § Page-edge clipping](layout-and-space.md).)
 37. For every decorative effect on text — highlighter `<mark>` / `<em>` band / accent stroke / underline — did I visually confirm the position and size? A highlighter band must sit behind the x-height (`linear-gradient(180deg, transparent ~38%, accent ~38%, accent ~92%, transparent ~92%)`), **not** at the baseline (which reads as a fat underline). Underlines must be 1–2 px and offset 1–2 px from the baseline, never 5+ px. Decorative strokes must not exceed 5 % of the viewport (gate 25). The check is *visual*: imagine the rendered output and confirm the band lands in the right vertical zone.
 38. Are interactive bars (nav, toolbar, command bar, hero CTA row, footer link strip) explicitly vertically centered? Default flex layouts inherit `align-items: stretch`, which makes a button taller than its sibling text and breaks the visual baseline. Every flex row mixing height-different elements (button + text, icon + text, mark + body) must declare `align-items: center` and `line-height: 1` on the items with intrinsic height. Inheriting `line-height: 1.55` from `html` fights the row's vertical rhythm.
+
+## Typography discipline gates
+
+(Three faces is the ceiling. See [`typography.md` § The 2+1 rule](typography.md).)
+
+39. Does the page use **more than three** distinct `font-family` families? Count: `--font-display`, `--font-body`, and at most one outlier (`--font-outlier` for wordmark / hero stat / pull quote). A fourth family on the page — e.g. body + display + mono in code blocks + a separate display for the hero — is slop. Same family at different weights counts as one family. Mono counts as a family if used in any non-code context (captions, labels, numerals). If you find four, drop one back to the body or display face.
+40. Is the **outlier face used in more than two slots** on the page? The outlier is a register, not a third surface — wordmark + hero stat is the canonical pair, or wordmark + masthead, or hero stat + pull quote. Three slots = the outlier is now a third body font; collapse it back to the body face.
+
+## Input-state gates
+
+(Inputs are where almost-right UIs lose. See [`interaction-and-states.md` § Input field states](interaction-and-states.md).)
+
+41. Does any input, textarea, or select field change `border-width` between states (default → hover → focus → error)? Default is 1 px; hover, focus, and error must keep `border-width: 1px`. Border-width changes cause layout shift. State changes go to `background-color`, `outline`, `box-shadow`, or `border-color` — never `border-width`.
+42. Does the input focus ring use `border` instead of `outline`? The focus ring must be `outline: 2px solid var(--color-focus)` with `outline-offset: 1px`. Reserving `outline: 2px solid transparent` in the default state prevents geometry shift on activate. A focus ring built from a `border` change is a tell.
+43. Is the input height different from the height of an adjacent button on the same form? Form inputs and the form's submit button share a single base height (44 px floor). 38 px input + 44 px button is the most common form-tuning slop and reads as un-designed.
+44. Is the helper-text container collapsed when no helper or error is shown? The helper slot must reserve `min-height: 1lh` even when empty so that an error appearing doesn't push the page down. Vertical jump on validation is a tell.
+45. Is the disabled input state signalled by *only* `opacity: 0.5`? Disabled needs three independent signals: `opacity: 0.55` AND `cursor: not-allowed` AND `aria-disabled="true"` (or the native `disabled` attribute). One channel is missable; three are not.
 
 ---
 

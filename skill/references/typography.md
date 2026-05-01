@@ -10,6 +10,29 @@ Type carries the design. If the type is wrong, nothing else matters.
 - Line-height changes with size. Tight for display (1.05–1.2), comfortable for body (1.5–1.65).
 - Measure — line length — lives between 45 and 75 characters. Use `max-width: 65ch` as the default.
 
+## The 2+1 rule — three faces is the ceiling
+
+**A page may use at most three distinct font families.** One **display**, one **body**, and an optional **outlier** for a single typographic moment — wordmark, hero stat, pull quote, masthead — where the page wants exactly one note that doesn't sound like the rest. Four families is slop. Two is canonical. Three is the ceiling, used sparingly.
+
+The pattern:
+
+```css
+:root {
+  --font-display:  "Fraunces", ui-serif, Georgia, serif;       /* headings, hero */
+  --font-body:     "Geist", ui-sans-serif, system-ui, sans;    /* prose, UI */
+  --font-outlier:  "Geist Mono", ui-monospace, monospace;      /* wordmark + hero stat ONLY */
+}
+```
+
+The outlier is a *register*, not a third surface. Rules:
+
+- **Outlier appears in ≤ 2 places** on the whole page. Wordmark + hero stat. Or pull quote + masthead. Two slots, not five. If you find yourself reaching for it a third time, you don't have an outlier — you have a third body font, which is slop.
+- **The outlier carries one role.** It tags a specific kind of content (the brand, the headline figure, the manifesto line). Once you know what it tags, every instance of that role uses it. Don't apply it to one button label and not another.
+- **Mono counts as a face.** A page with Fraunces display, Geist body, and Geist Mono in code blocks is using three families. That's fine — code is the outlier role. Don't sneak in a fourth.
+- **Same family at different weights is one family**, not two. Geist 400 + Geist 700 is one font; pairing it with Fraunces is two. Adding Geist Mono on top is three.
+
+Two families is still the right answer for most pages. Three is for SaaS / brand-heavy / editorial-rich pages where the wordmark needs a different register than the body.
+
 ## Banned defaults
 
 These fonts are on-distribution for every LLM. Do not reach for them without a deliberate reason:
@@ -20,30 +43,97 @@ These fonts are on-distribution for every LLM. Do not reach for them without a d
 
 If the user insists on one, do it. Otherwise pick from the allowlist below.
 
-## Pairing patterns that work
+## The font catalog
 
-Each tone gets two rows: a **free baseline** (everything Google-Fonts-or-similar; works out of the box) and a **paid upgrade** (foundry licences required; only when the user has confirmed the budget and the licence). The free row is the default. **Never name a paid font in code without confirming the user is licensed** — the demo will fall back to system-default and look broken to the user.
+Three sources, in priority order:
 
-| Tone | Tier | Display | Body | Mono |
+- **Google Fonts** — free, served via CDN, works everywhere. The default source.
+- **Fontshare** (Indian Type Foundry) — free for commercial use, foundry-grade. The "you didn't know these were free" tier. Drop-in via `<link href="https://api.fontshare.com/v2/css?f=...">`.
+- **Foundry-licensed** — Klim, Pangram Pangram, Production Type, Lineto, Colophon. Only when the user has confirmed they're licensed.
+
+### Free display faces
+
+| Family | Source | Voice | Best for |
+| --- | --- | --- | --- |
+| **Fraunces** | Google | Variable serif, deeply expressive italic, optical-size axis | Editorial, Salon, Atelier, brand-heavy |
+| **Newsreader** | Google | Roman serif with optical-size + italic | Editorial, magazine, long-form |
+| **Instrument Serif** | Google | Tight contrast, italic available, smart for short heads | Brand, atelier, intimate editorial |
+| **Cormorant Garamond** | Google | Classical, high contrast, luxury register | Luxury, fashion, fine arts |
+| **EB Garamond** | Google | Honest classical Garamond, body-grade | Editorial body, longform reading |
+| **Cardo** | Google | Scholarly serif, generous x-height | Reference, academic, slow reading |
+| **Source Serif 4** | Google | Modern transitional, big OT family | SaaS marketing with serif tone |
+| **DM Serif Display** | Google | Bracketed serif, high-contrast display | Headlines that need to feel printed |
+| **Bodoni Moda** | Google | Modern Bodoni revival, dramatic | Fashion, editorial, luxury display |
+| **Playfair Display** | Google | Use only as display; banned as body | Marketing display moments — sparingly |
+| **Geist** | Google | Modern grotesque, geometric, 7 weights | Modern minimal, SaaS, dev tools |
+| **Inter Tight** | Google | Tighter Inter — allowed *only* as a body fallback in technical themes; never as display | UI body in restrained themes |
+| **Bricolage Grotesque** | Google | Variable display sans, bold weights, condensable | Brutal, playful, riso-bold |
+| **Space Grotesk** | Google | Geometric grotesque, slightly quirky | Brutalist, technical |
+| **Anton** | Google | Heavy condensed grotesque | Posters, manifestos |
+| **Big Shoulders Display** | Google | Industrial condensed | Sports, manifestos, declarative |
+| **Tomorrow** | Google | Variable optical condensed | Tech, atmospheric, near-future |
+| **Outfit** | Google | Modern geometric (banned as default; use only when *picked* deliberately) | Restrained tech — sparingly |
+| **General Sans** | Fontshare | Modern grotesque, Geist-adjacent | Modern minimal alternative to Geist |
+| **Switzer** | Fontshare | Neutral sans, broad weight range | SaaS body, restrained |
+| **Cabinet Grotesk** | Fontshare | Display grotesque, 9 weights | Editorial display, magazine |
+| **Clash Display** | Fontshare | Ultra-condensed display | Posters, brand moments |
+| **Satoshi** | Fontshare | Playful geometric sans | Playful, consumer |
+| **Sentient** | Fontshare | Variable serif, soft contrast | Soft editorial, atmospheric |
+| **Erode** | Fontshare | Distressed serif, hand-set feel | Riso, tactile-rebellion, brand-y |
+| **Tanker** | Fontshare | Heavy condensed grotesque, pure display | One-word posters, mastheads |
+
+### Free body faces
+
+| Family | Source | Voice | Best for |
+| --- | --- | --- | --- |
+| **Geist** | Google | The default modern body sans | Modern minimal, SaaS, atmospheric |
+| **The Future** | (in repo) | Hallmark's own body workhorse | Default Hallmark tone |
+| **Newsreader** | Google | Reading serif, optical-size aware | Editorial body, longform |
+| **Source Serif 4** | Google | Body-grade serif | Editorial mid-weight |
+| **EB Garamond** | Google | Classical body | Editorial slow reading |
+| **Spectral** | Google | Slab-ish serif, screen-tuned | Long-form on screen |
+| **Lora** | Google | Calligraphic serif, body-grade | Body — sparingly (over-used) |
+| **Crimson Pro** | Google | Old-style body, generous | Editorial slow body |
+| **IBM Plex Sans** | Google | Engineering sans, broad family | Technical body |
+| **Switzer** | Fontshare | Neutral sans body | SaaS body, restrained |
+| **General Sans** | Fontshare | Geist-adjacent body | Modern minimal body |
+
+### Free mono / outlier faces
+
+| Family | Source | Voice | Best for |
+| --- | --- | --- | --- |
+| **Geist Mono** | Google | Geist's mono companion | Default Hallmark mono, code, captions |
+| **JetBrains Mono** | Google | Engineering mono, ligatures | Code, terminal, technical |
+| **IBM Plex Mono** | Google | Engineering mono, broad family | Technical body-grade |
+| **Commit Mono** | Google | Tighter mono, modern | Code, modern terminal |
+| **Space Mono** | Google | Quirky, slightly retro | Playful tech, riso |
+
+### Tone-based pairing patterns
+
+Each tone gets two rows: a **free baseline** (Google Fonts / Fontshare; works out of the box) and a **paid upgrade** (foundry licences required; only when the user has confirmed the budget and the licence). The free row is the default. **Never name a paid font in code without confirming the user is licensed** — the demo will fall back to system-default and look broken to the user.
+
+| Tone | Tier | Display | Body | Outlier |
 | --- | --- | --- | --- | --- |
-| **Editorial** | Free | Fraunces · Newsreader · EB Garamond | IBM Plex Sans · Inter Tight | JetBrains Mono · Geist Mono |
-| | *Paid* | *Tiempos Headline · Söhne Breit · Reckless Display* | *Söhne · Haffer · Untitled Sans* | *Söhne Mono · GT America Mono* |
-| **Technical** | Free | JetBrains Mono · Geist Mono · Geist (700) | Geist · IBM Plex Sans | Geist Mono · JetBrains Mono |
-| | *Paid* | *Berkeley Mono · Söhne Mono · GT Pressura* | *Söhne · Untitled Sans* | *Berkeley Mono · GT Pressura Mono* |
-| **Brutalist** | Free | Inter Tight (heavy) · Anton · Bricolage Grotesque (800) | Inter · Geist | Geist Mono |
-| | *Paid* | *Druk · Monument Extended · NaN Jaune · Migra* | *Söhne Breit · GT America* | *GT America Mono* |
-| **Soft** | Free | Geist · Bricolage Grotesque (500) · Newsreader | Geist · Crimson Pro | Geist Mono |
-| | *Paid* | *Söhne · GT Pressura · Pangaia* | *Söhne · Halyard Text* | *Söhne Mono* |
-| **Luxury** | Free | Cormorant Garamond · Fraunces · Cardo | EB Garamond · Crimson Pro | (rare; if needed: JetBrains Mono) |
-| | *Paid* | *Canela · Tiempos Headline · GT Super · Domaine Display* | *Tiempos Text · Suisse Int'l · Domaine Text* | *(rarely used at this tier)* |
-| **Playful** | Free | Bricolage Grotesque · Fraunces (italic) · Newsreader (italic) | Geist · Newsreader | Geist Mono |
-| | *Paid* | *Clash Display · Cabinet Grotesk · Migra · Tobias* | *Satoshi · Plus Jakarta Sans · GT Maru* | *Space Mono · GT Maru Mono* |
-| **Austere** | Free | system-ui · Inter Tight (regular) · Geist (400) | system-ui · Geist | system-ui · Geist Mono |
+| **Editorial** | Free | Fraunces · Newsreader · EB Garamond · Instrument Serif · Cabinet Grotesk | IBM Plex Sans · Switzer · Source Serif 4 | JetBrains Mono · Geist Mono · Erode (display moment) |
+| | *Paid* | *Tiempos Headline · Söhne Breit · Reckless Display · Migra · Tobias* | *Söhne · Haffer · Untitled Sans* | *Söhne Mono · GT America Mono* |
+| **Technical** | Free | JetBrains Mono · Geist Mono · Geist (700) · Commit Mono | Geist · IBM Plex Sans · Switzer | Tomorrow · Cabinet Grotesk (wordmark) |
+| | *Paid* | *Berkeley Mono · Söhne Mono · GT Pressura · ABC Diatype Mono* | *Söhne · Untitled Sans · ABC Diatype* | *Berkeley Mono · GT Pressura Mono* |
+| **Brutalist** | Free | Bricolage Grotesque (800) · Anton · Tanker · Big Shoulders Display | Geist · Switzer | Space Grotesk (numerals) · Geist Mono |
+| | *Paid* | *Druk · Monument Extended · NaN Jaune · Migra · ABC Pressura* | *Söhne Breit · GT America* | *GT America Mono* |
+| **Soft** | Free | Geist · Bricolage Grotesque (500) · Sentient · Newsreader | Geist · Crimson Pro · Switzer | Geist Mono · Satoshi (label) |
+| | *Paid* | *Söhne · GT Pressura · Pangaia · Tobias* | *Söhne · Halyard Text · Satoshi* | *Söhne Mono · GT Maru Mono* |
+| **Luxury** | Free | Cormorant Garamond · Fraunces · Cardo · DM Serif Display · Bodoni Moda | EB Garamond · Crimson Pro · Source Serif 4 | (rare; small caps from display family) |
+| | *Paid* | *Canela · Tiempos Headline · GT Super · Domaine Display · Migra* | *Tiempos Text · Suisse Int'l · Domaine Text* | *(rarely used at this tier)* |
+| **Playful** | Free | Bricolage Grotesque · Fraunces (italic) · Satoshi · Newsreader (italic) · Sentient | Geist · Newsreader · Satoshi | Geist Mono · Space Mono |
+| | *Paid* | *Clash Display · Cabinet Grotesk · Migra · Tobias · Pangaia* | *Satoshi · Plus Jakarta Sans · GT Maru* | *Space Mono · GT Maru Mono* |
+| **Austere** | Free | system-ui · Inter Tight (regular) · Geist (400) · Switzer (regular) | system-ui · Geist · Switzer | system-ui mono · Geist Mono |
 | | *Paid* | *ABC Diatype · ABC Monument Grotesk · Söhne (regular) · ABC Pressura* | *ABC Diatype · Söhne* | *ABC Diatype Mono · Söhne Mono* |
-| **Workshop** *(Hallmark's own theme)* | Free | The Future · Geist · Inter Tight | The Future · Söhne | The Future Mono · Geist Mono |
+| **Atmospheric** | Free | Geist (600) · Sentient · Tomorrow · Bricolage Grotesque | Geist (400) · Switzer | Geist Mono · JetBrains Mono |
+| | *Paid* | *Söhne · GT Pressura · ABC Diatype* | *Söhne · ABC Diatype* | *Berkeley Mono · Söhne Mono* |
+| **Workshop** *(Hallmark's own theme)* | Free | The Future · Geist · Cabinet Grotesk | The Future · Switzer | The Future Mono · Geist Mono |
 | | *Paid* | *Avenir Next · GT Walsheim* | *Söhne · GT Walsheim* | *Berkeley Mono* |
 
-**The discipline.** Default to the free pairings. They're not consolation prizes; Fraunces, Geist, Bricolage Grotesque, and JetBrains Mono are first-rate faces in 2026. The paid upgrades exist for two cases: (a) the user has explicitly confirmed they're licensed, or (b) the user is asking for a specific named foundry voice (e.g., "make it look like Klim", "I want Söhne"). Reach for Tier 2 only then; otherwise the free row is the right answer. Treat the free row as canon, the paid row as a *cited* alternative.
+**The discipline.** Default to the free pairings. They're not consolation prizes; Fraunces, Geist, Bricolage Grotesque, Cabinet Grotesk, Sentient, and JetBrains Mono are first-rate faces in 2026. The paid upgrades exist for two cases: (a) the user has explicitly confirmed they're licensed, or (b) the user is asking for a specific named foundry voice (e.g., "make it look like Klim", "I want Söhne"). Reach for Tier 2 only then; otherwise the free row is the right answer. Treat the free row as canon, the paid row as a *cited* alternative.
 
 ## Wordmark / logo typography
 
@@ -134,3 +224,5 @@ Use no more than five sizes on a single page. If you need more hierarchy, use we
 - No all-caps paragraphs.
 - No font-size below 14px for body copy, below 10px anywhere.
 - No hard-synthesised bold or italic.
+- **No more than three font families on a single page.** Display + body + one outlier is the ceiling. Four families = slop. Audit gate.
+- No outlier face used in more than two slots. Wordmark + hero stat is the canonical pair; if you reach for a third slot, drop it back to the body face.
