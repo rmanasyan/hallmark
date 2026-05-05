@@ -47,6 +47,7 @@ const THEMES = {
   aurora: "Aurora",
   halo: "Halo",
   plume: "Plume",
+  editorial: "Editorial",
 };
 const STORAGE_KEY = "hallmark-theme";
 
@@ -77,6 +78,7 @@ const ARCHETYPES = {
   aurora: { hero: "marquee", footer: "masthead" },
   halo: { hero: "clipped", footer: "index" },
   plume: { hero: "clipped", footer: "masthead" },
+  editorial: { hero: "split", footer: "masthead" },
 };
 
 /* — Theme → genre map ——————————————————————————————————
@@ -110,12 +112,14 @@ const THEME_GENRES = {
   // playful — post-Linear soft school (2 themes)
   pastel:    "playful",
   plume:     "playful",
+  // editorial — open-design-inspired premium (added v0.9.0)
+  editorial: "editorial",
 };
 
 /* — Locked hero title —————————————————————————————————
    The H1 string is the same across every theme. Only the visual
    treatment swaps — italic vs roman, serif vs sans, all-caps vs not.
-   The page is the demo: one sentence, twenty-two distinct designs. */
+   The page is the demo: one sentence, twenty-three distinct designs. */
 const HERO_TITLE = "A design skill that refuses to look AI-generated.";
 
 /* — Per-theme copy fixtures —————————————————————————————
@@ -146,7 +150,7 @@ const COPY = {
   newsprint: {
     eyebrow: "Volume I · Issue 02 · 28 April 2026",
     title: HERO_TITLE,
-    lede: "Twenty-two themes. Twenty-one named page shapes. Forty component archetypes — nine navs, eight footers, four hero polish patterns. A 55-gate slop test that gates every output before it ships. Hallmark is the rulebook the LLM never read.",
+    lede: "Twenty-three themes. Twenty-one named page shapes. Forty component archetypes — nine navs, eight footers, four hero polish patterns. A 55-gate slop test that gates every output before it ships. Hallmark is the rulebook the LLM never read.",
     ctaLabel: "Distribution",
     proofLabel: "From the rule sheet",
     proofA: "Multi-column body, justified",
@@ -258,7 +262,7 @@ const COPY = {
     quote: "An almanac is a book that knows where to look.",
     attrib: "Almanac, frontispiece",
     salutation: "Reference note,",
-    letterBody: "This page is a reference, not an argument. The numbers are the point: 21 macrostructures, 40 archetypes, 22 themes, 55 slop-test gates. Cross-referenced so the next page Hallmark builds is genuinely different from the last.",
+    letterBody: "This page is a reference, not an argument. The numbers are the point: 21 macrostructures, 40 archetypes, 23 themes, 55 slop-test gates. Cross-referenced so the next page Hallmark builds is genuinely different from the last.",
     signoff: "— editor",
     captionA: "Vol. III",
     captionB: "Plate 12",
@@ -443,7 +447,7 @@ const COPY = {
     letterBody: "A theme for the modern enterprise page — the Stripe / Linear / ElevenLabs school of restraint. Clean white, confident typography, pill CTAs. Minimalism with conviction, not absence.",
     signoff: "Yours,",
     captionA: "Quiet",
-    captionB: "v0.8",
+    captionB: "v0.9",
   },
   bloom: {
     eyebrow: "Atmospheric · 2026",
@@ -571,6 +575,27 @@ const COPY = {
     captionA: "Plume",
     captionB: "Late spring",
   },
+  editorial: {
+    eyebrow: "No XXIII · Editorial",
+    title: HERO_TITLE,
+    lede: "An editorial-premium voice — warm cream paper, coral accent, mixed sans + serif italic. Magazine-shaped, hairline rules, asymmetric grids. Inspired by open-design.",
+    ctaLabel: "I · Install",
+    proofLabel: "From the rule sheet",
+    proofA: "Inter Tight 800 + Playfair italic, mixed in display",
+    proofB: "Hairlines, generous whitespace, Roman-numeral marginalia",
+    proofC: "Coral accent · ≤ 5% of viewport",
+    cta: "Read the issue",
+    stat: "23",
+    qualifier: "the twenty-third theme. open-design-inspired.",
+    mockStat: "23",
+    quote: "A magazine page knows how much to leave out.",
+    attrib: "Editorial, frontispiece",
+    salutation: "Dear reader,",
+    letterBody: "An editorial premium that takes its cue from the print magazines that still feel right — warm cream paper, hairline rules, Roman-numeral marginalia, an italic display word slipped inside a sans-serif headline. Coral the only colour besides ink. Asymmetric without being clever about it.",
+    signoff: "Yours,",
+    captionA: "Issue 23",
+    captionB: "Spring 2026",
+  },
 };
 
 /* — Slot population ———————————————————————————————————— */
@@ -609,10 +634,10 @@ function buildDenseColophon(themeName) {
   // template-string'd so it stays monospace-aligned.
   const today = "2026-05-01";
   return [
-    `# hallmark · v0.8.0 · ${themeName.toLowerCase()}`,
+    `# hallmark · v0.9.0 · ${themeName.toLowerCase()}`,
     `# build: ${today} · MIT · powered by together ai`,
     `#`,
-    `# stats:  21 macros · 40 archetypes · 9 navs · 8 footers · 22 themes · 55 gates`,
+    `# stats:  21 macros · 40 archetypes · 9 navs · 8 footers · 23 themes · 55 gates`,
     `#         catalog (22 named) + custom (per-brand, opt-in)`,
     `#`,
     `# repo:   github.com/Luffixos/hallmark`,

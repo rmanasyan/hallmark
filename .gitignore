@@ -23,3 +23,11 @@ build/
 .cache/
 *.log
 .vercel
+
+# Environment + secrets
+.env
+.env.local
+.env.*.local
+
+# Generation pipeline artifacts (raw outputs before commit)
+.image-cache/

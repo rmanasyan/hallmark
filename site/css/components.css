@@ -4386,3 +4386,142 @@ html[data-theme="halo"] aside {
 [data-theme="manifesto"] .code {
   border-width: 1.5px;
 }
+
+/* ──────────────────────────────────────────────────────────────
+   EDITORIAL THEME — open-design-inspired structural overrides (v0.9.0)
+
+   The 23rd theme. Editorial-premium voice: mixed serif italic
+   inside sans display, Roman-numeral marginalia, hairline rules,
+   asymmetric grids. Inspired by github.com/nexu-io/open-design.
+   ────────────────────────────────────────────────────────────── */
+
+/* Mixed display: italic Playfair word inside Inter Tight headline */
+[data-theme="editorial"] .hero__display em,
+[data-theme="editorial"] .section__title em,
+[data-theme="editorial"] .opening__title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Roman-numeral section heads — replaces the leading number */
+[data-theme="editorial"] .section-label .num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+[data-theme="editorial"] .section-label .divider {
+  opacity: 0.55;
+}
+
+/* Quieter rules and accents */
+[data-theme="editorial"] .section__head {
+  border-bottom-color: var(--color-rule);
+  border-bottom-width: 0.5px;
+}
+
+/* Tighten body in editorial — Inter is dense, less line-height needed */
+[data-theme="editorial"] .examples__intro,
+[data-theme="editorial"] .study__intro,
+[data-theme="editorial"] .install-pane__next {
+  font-family: var(--font-body);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   OPEN-DESIGN STEALS — reusable utilities (v0.9.0)
+
+   Six patterns extracted from open-design. NOT theme-only — these
+   are utilities any theme can use. Skill rules cross-reference them
+   in component-cookbook.md and microinteractions.md.
+   ────────────────────────────────────────────────────────────── */
+
+/* — Tabular numerals utility ———————————————————————————————
+   Apply to anything that mixes numbers with text — versions, dates,
+   stats, code stamps — so digit widths align like a ledger. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* — Corner-bracket image annotation —————————————————————————
+   Wrap any image with .fig-corners; four 18px brackets appear at
+   the corners. Lightweight alternative to a full frame. */
+.fig-corners {
+  position: relative;
+  display: block;
+}
+.fig-corners::before,
+.fig-corners::after,
+.fig-corners > .fig-corners__br,
+.fig-corners > .fig-corners__bl {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--color-rule-2);
+  pointer-events: none;
+}
+.fig-corners::before { top: -4px; left: -4px; border-right: 0; border-bottom: 0; }
+.fig-corners::after  { top: -4px; right: -4px; border-left: 0; border-bottom: 0; }
+.fig-corners > .fig-corners__bl { bottom: -4px; left: -4px; border-right: 0; border-top: 0; }
+.fig-corners > .fig-corners__br { bottom: -4px; right: -4px; border-left: 0; border-top: 0; }
+
+/* — Pulse animation utility ————————————————————————————————
+   Subtle ambient breathing pulse for status dots / live indicators.
+   2.4s ease-in-out, opacity-only. Reduced-motion fallback is steady. */
+.pulse {
+  animation: pulse-breathe 2.4s var(--ease-in-out, ease-in-out) infinite;
+}
+@keyframes pulse-breathe {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse { animation: none; opacity: 0.85; }
+}
+
+/* — Dark-slab section reversal —————————————————————————————
+   Wrap any .section in `.section--invert` to flip paper/ink colours
+   for that one section. Useful for breaking page rhythm. */
+.section--invert {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  margin-inline: calc(-1 * var(--page-gutter));
+  padding-inline: var(--page-gutter);
+  padding-block: var(--space-2xl);
+}
+.section--invert .section__title,
+.section--invert .section-label,
+.section--invert .section__head { color: var(--color-paper); }
+.section--invert .section__head { border-bottom-color: oklch(50% 0.02 60 / 0.4); }
+
+/* — Asymmetric hero ratio knob ——————————————————————————————
+   Default split-hero ratio is 50/50; this knob swaps it to 0.78/1.22
+   per the open-design move. Apply to `.hero--split[data-ratio="asym"]`. */
+.hero--split[data-ratio="asym"] {
+  grid-template-columns: 0.78fr 1.22fr;
+}
+
+/* — Roman-numeral section-label variant —————————————————————
+   `<span class="num num--roman">XII</span>` rendered in italic serif. */
+.section-label .num--roman {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* — Smart sticky nav (reveal on scroll-up) ———————————————————
+   Apply to .banner with class `banner--smart`. Hidden when scrolling
+   down, slid back in when scrolling up. JS toggles the class on scroll. */
+.banner--smart {
+  transition: transform 220ms var(--ease-out);
+}
+.banner--smart.is-hidden {
+  transform: translateY(-100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .banner--smart { transition: none; }
+}

@@ -109,6 +109,7 @@ The table below is alphabetical by theme to neutralise any "first row = default"
 | Newsprint | Bottom-aligned | Multi-column justified | Double rule | Outlined | Inline | None | N6 Masthead | Ft4 Dense colophon |
 | Pastel | Centered | Single column | Negative space | Outlined | None | Fade-up | N5 Floating pill | Ft2 Inline single line |
 | Plume | Hanging | Single column | Bleed-colour band | Outlined | Margin-aligned | Fade-up | N9 Edge-min | Ft1 Mast-headed |
+| Editorial | Hanging | 2-col asym hero / single below | Hairline | Outlined | Tightly cropped or generated (Tier C) | Fade-up | N6 Masthead | Ft1 Mast-headed |
 | Quiet | Centered | Single column narrow | Negative space | Outlined pill | None | None | N9 Edge-min | Ft2 Inline single line |
 | Riso | Centered | Single column | Negative space | Outlined | Inline | None | N7 Brutal slab | Ft8 Marquee scroll |
 | Salon | Centered | Single column narrow | Ornament (fleuron) | Outlined | Tightly cropped | None | N6 Masthead | Ft1 Mast-headed |

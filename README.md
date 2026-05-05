@@ -2,9 +2,9 @@
 
 **A design skill that studies what you admire — and rebuilds your content with it.**
 
-→ Live demo: **[hallmark-murex.vercel.app](https://hallmark-murex.vercel.app)** · twenty-two themes, eight worked tests, press `T` to cycle.
-→ Current version: **v0.8.0** — adds genres (editorial · modern-minimal · atmospheric · playful), `design.md` for whole-project redesigns, lazy reference loading, the 2+1 font rule with 55-gate slop test, component-library exports (tokens.css always emitted; Tailwind / DTCG / shadcn formats inline in design.md), a Study gallery on the marketing site, and seven new themes (Quiet refreshed, plus Bloom, Coral, Violet, Aurora, Halo, Plume).
-→ **Latest:** **9 nav archetypes** (Floating pill · Newspaper masthead · Brutal slab · Terminal command · Edge-aligned minimal — plus the original 4) and **8 footer archetypes** (Statement · Letter close · Newsletter-first · Marquee scroll — plus the original 4), with per-genre routing. **4 hero polish patterns** (Vertical-rail · Marquee-overflow · Cursor-spotlight · Decorative-numeral). Five new slop-test gates (51–55) catch the AI nav fingerprint, the AI footer fingerprint, centred-everything heroes, hero padding asymmetry, and decorative-without-purpose. Terminal cursor constraint codified — no standalone blinks, only inside typed commands.
+→ Live demo: **[hallmark-murex.vercel.app](https://hallmark-murex.vercel.app)** · twenty-three themes, eight worked tests, press `T` to cycle.
+→ Current version: **v0.9.0** — adds the **Editorial** theme (open-design-inspired premium · warm cream + coral + Inter Tight × Playfair italic), a **watercolor + ink-wash sprinkle** across the marketing site (18 seeded plates from `google/gemini-3-pro-image` via Together AI), **generated-imagery.md** in the skill (Tier C promoted to peer of Tier B with seed-and-reference discipline + per-theme style-prompt table for all 23 themes), a power-user [`generate.mjs`](skill/_assets/scripts/generate.mjs) drop-in script, and selected open-design utilities (Roman-numeral section heads, corner-bracket image annotations, dark-slab section reversal, pulse animation, `.tnum` utility).
+→ Previously in **v0.8**: genres (editorial · modern-minimal · atmospheric · playful), `design.md` for whole-project redesigns, the 2+1 font rule with 55-gate slop test, component-library exports, 9 nav archetypes (incl Floating pill), 8 footer archetypes, 4 hero polish patterns, contrast gates 46–50, nav/footer/hero structural gates 51–55.
 
 <table>
   <tr>

@@ -18,11 +18,11 @@
   <link rel="preload" href="fonts/the-future-medium.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/the-future-mono-regular.woff2" as="font" type="font/woff2" crossorigin />
 
-  <!-- Google Fonts — Fraunces (Specimen + Studio italic display), Geist (Pastel), Bricolage + Newsreader (Riso). -->
+  <!-- Google Fonts — Fraunces, Geist, Bricolage, Newsreader, plus Inter Tight + Playfair Display for Editorial. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" />
 
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
@@ -46,7 +46,7 @@
   <header class="banner" role="banner">
     <a class="banner__mark" href="#top" aria-label="Hallmark — top of page">
       <span class="banner__name">Hallmark</span>
-      <span class="banner__ver">v0.8</span>
+      <span class="banner__ver tnum">v0.9</span>
     </a>
 
     <a class="banner__install" href="#install" aria-label="Jump to install section">Install</a>
@@ -108,6 +108,8 @@
         style="--dot: oklch(13% 0.005 60); --dot-edge: oklch(74% 0.16 70);"></button>
       <button class="banner__dot" type="button" data-theme-btn="plume" aria-label="Plume"
         style="--dot: oklch(96% 0.020 70); --dot-edge: oklch(68% 0.130 18);"></button>
+      <button class="banner__dot" type="button" data-theme-btn="editorial" aria-label="Editorial"
+        style="--dot: oklch(94% 0.020 75); --dot-edge: oklch(60% 0.160 35);"></button>
 
     </div>
 
@@ -148,7 +150,7 @@
         </h2>
       </header>
 
-      <p class="examples__intro">Each page is hand-built HTML and CSS — no shared theme, no shared layout. <span class="examples__hint">Click any card to open the full page →</span></p>
+      <p class="examples__intro">No shared theme. No shared layout. <span class="examples__hint">Open any card →</span></p>
 
       <div class="examples-rail" role="list" aria-label="Eight example landing pages">
 
@@ -307,6 +309,13 @@
       </div>
     </section>
 
+    <!-- transition · examples → study -->
+    <figure class="transition reveal" style="--i:1.5" aria-hidden="true">
+      <div class="wc">
+        <img src="img/generated/transition-02-03.png" alt="" loading="lazy" decoding="async" width="1264" height="848" />
+      </div>
+    </figure>
+
     <!-- 03 · STUDY — what `study` extracts from a design -->
     <section class="section reveal" style="--i:2" id="study" aria-labelledby="s-study">
       <header class="section__head">
@@ -319,7 +328,7 @@
       </header>
 
       <p class="study__intro">
-        <code>hallmark study</code> reads a design's structure, not its pixels. Below, two Hallmark-built pages put through the same DNA extraction the verb runs on user-supplied references. The screenshot is the page; the panel beside it is the structured DNA.
+        <code>hallmark study</code> reads a design's structure, not its pixels. Screenshot left, structured DNA right.
       </p>
 
       <div class="study-grid">
@@ -539,6 +548,13 @@
       </div>
     </section>
 
+    <!-- transition · without/with → foundations -->
+    <figure class="transition reveal" style="--i:3.5" aria-hidden="true">
+      <div class="wc">
+        <img src="img/generated/transition-04-05.png" alt="" loading="lazy" decoding="async" width="1264" height="848" />
+      </div>
+    </figure>
+
     <!-- 05 · FOUNDATIONS — vertical list + active panel (CSS-only tabs) -->
     <section class="section reveal" style="--i:4" aria-labelledby="s5-foundations">
       <header class="section__head">
@@ -589,7 +605,10 @@
         <div class="found-panels">
 
           <article class="found-panel" data-panel="type">
-            <p class="found-panel__rule">Pick fonts on purpose. Skip Inter and Geist — the defaults every site uses. Pair a display face that has a personality with a clean body face, and lean into the extreme weights, light or heavy, not the safe middle.</p>
+            <div class="wc found-panel__plate" aria-hidden="true">
+              <img src="img/generated/found-type.png" alt="" loading="lazy" decoding="async" width="1024" height="1024" />
+            </div>
+            <p class="found-panel__rule">Pick fonts on purpose. Skip the defaults. Pair a display with personality and a clean body, and lean into extreme weights — not the safe middle.</p>
             <div class="found-panel__viz spec__viz spec__viz--type">
               <div class="spec__viz-row spec__viz-row--display"><span>Hallmark</span><em class="spec__viz-tag">Fraunces · 900 italic</em></div>
               <div class="spec__viz-row spec__viz-row--body"><span>Hallmark</span><em class="spec__viz-tag">Geist · 300</em></div>
@@ -598,7 +617,10 @@
           </article>
 
           <article class="found-panel" data-panel="colour">
-            <p class="found-panel__rule">One accent colour, used so sparingly you almost miss it — less than 3% of what's on screen. Skip pure black and pure white (they're harsher than they look). Avoid purple gradients.</p>
+            <div class="wc found-panel__plate" aria-hidden="true">
+              <img src="img/generated/found-colour.png" alt="" loading="lazy" decoding="async" width="1024" height="1024" />
+            </div>
+            <p class="found-panel__rule">One accent, used so sparingly you almost miss it — under 3% of the screen. Skip pure black and pure white. Avoid purple gradients.</p>
             <div class="found-panel__viz spec__viz spec__viz--colour" aria-hidden="true">
               <span class="spec__viz-dot"></span>
               <p class="spec__viz-caption">One accent. The whole field is paper. The dot is the accent.</p>
@@ -613,7 +635,10 @@
           </article>
 
           <article class="found-panel" data-panel="space">
-            <p class="found-panel__rule">Generous space, used unevenly. Pick one consistent scale so things feel related. Asymmetry on purpose, never by accident — centred-everything is a tell.</p>
+            <div class="wc found-panel__plate" aria-hidden="true">
+              <img src="img/generated/found-space.png" alt="" loading="lazy" decoding="async" width="1024" height="1024" />
+            </div>
+            <p class="found-panel__rule">Generous space, used unevenly. One consistent scale. Asymmetry on purpose — centred-everything is a tell.</p>
             <div class="found-panel__viz spec__viz spec__viz--space" aria-hidden="true">
               <div class="spec__viz-grid spec__viz-grid--bad">
                 <span class="vg-bar vg-bar--xl"></span>
@@ -630,6 +655,9 @@
           </article>
 
           <article class="found-panel" data-panel="motion">
+            <div class="wc found-panel__plate" aria-hidden="true">
+              <img src="img/generated/found-motion.png" alt="" loading="lazy" decoding="async" width="1024" height="1024" />
+            </div>
             <p class="found-panel__rule">Keep motion quiet. One smooth entrance feels designed; ten little bounces feel busy. Animate fade and slide — never size, colour, or layout.</p>
             <div class="found-panel__viz spec__viz spec__viz--motion">
               <button class="spec__viz-play" type="button" data-motion-demo aria-label="Play motion demo">
@@ -643,7 +671,10 @@
           </article>
 
           <article class="found-panel" data-panel="voice">
-            <p class="found-panel__rule">Write like a person. Specific verbs over vague ones. Link text that makes sense out of context. Real apostrophes, not straight quotes. No "seamless," no "unleash," no "built for the modern team."</p>
+            <div class="wc found-panel__plate" aria-hidden="true">
+              <img src="img/generated/found-voice.png" alt="" loading="lazy" decoding="async" width="1024" height="1024" />
+            </div>
+            <p class="found-panel__rule">Write like a person. Specific verbs. Link text that makes sense out of context. Real apostrophes. No "seamless," no "unleash," no "built for the modern team."</p>
             <div class="found-panel__viz spec__viz spec__viz--copy">
               <div class="spec__viz-copy-col" data-variant="bad">
                 <p class="spec__viz-copy-label">Vague</p>
@@ -742,16 +773,25 @@
           <p class="install-pane__label"><span class="install-pane__step">II</span> In</p>
           <ul class="install-pane__harnesses">
             <li class="harness">
+              <div class="wc harness__plate" aria-hidden="true">
+                <img src="img/generated/harness-claude.png" alt="" loading="lazy" decoding="async" width="1024" height="1024" />
+              </div>
               <span class="harness__name">Claude Code</span>
               <code class="harness__path">~/.claude/skills/hallmark/</code>
               <span class="harness__status harness__status--ok">auto-detected</span>
             </li>
             <li class="harness">
+              <div class="wc harness__plate" aria-hidden="true">
+                <img src="img/generated/harness-cursor.png" alt="" loading="lazy" decoding="async" width="1024" height="1024" />
+              </div>
               <span class="harness__name">Cursor</span>
               <code class="harness__path">.cursor/rules/hallmark.mdc</code>
               <span class="harness__status harness__status--ok">auto-detected</span>
             </li>
             <li class="harness">
+              <div class="wc harness__plate" aria-hidden="true">
+                <img src="img/generated/harness-codex.png" alt="" loading="lazy" decoding="async" width="1024" height="1024" />
+              </div>
               <span class="harness__name">Codex &amp; others</span>
               <code class="harness__path">git clone · copy skill/</code>
               <span class="harness__status">manual</span>
@@ -761,11 +801,16 @@
 
         <div class="install-pane__row">
           <p class="install-pane__label"><span class="install-pane__step">III</span> Then</p>
-          <p class="install-pane__next">Ask your agent for a UI. <code>hallmark</code> attaches itself when the prompt mentions design, audit, refine, redesign, or study — so the rules apply without you naming them.</p>
+          <p class="install-pane__next">Ask your agent for a UI. <code>hallmark</code> attaches itself.</p>
         </div>
 
       </div>
     </section>
+
+    <!-- footer mark · sits above the per-theme footer archetype -->
+    <div class="wc foot-mark reveal" style="--i:6.5" aria-hidden="true">
+      <img src="img/generated/footer-mark.png" alt="" loading="lazy" decoding="async" width="1024" height="1024" />
+    </div>
 
     <!-- FOOTER SLOT — archetype swaps per theme -->
     <footer class="slot slot--foot reveal" data-slot="footer" style="--i:7" role="contentinfo" aria-label="Colophon">
@@ -968,7 +1013,7 @@
       <div class="foot__col">
         <p class="foot__col-head">Catalog</p>
         <ul>
-          <li>22 themes</li>
+          <li>23 themes</li>
           <li>21 macrostructures</li>
           <li>40 archetypes</li>
           <li>9 navs · 8 footers</li>
@@ -981,7 +1026,7 @@
         <ul>
           <li><span class="foot__powered-mark">Together AI</span></li>
           <li>MIT licensed</li>
-          <li>v0.8.0</li>
+          <li>v0.9.0</li>
         </ul>
       </div>
     </div>
