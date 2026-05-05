@@ -17,7 +17,7 @@ Reach for the highest tier the brief lets you ship in the time you have. Skippin
 | **0 · Typography only** | No enrichment. Display, lede, optional CTA. | Always acceptable. The strongest fail-state. |
 | **A · Custom-built CSS art** | Pure-CSS shapes, gradients, clip-paths, no asset, zero dependency. | Geometric shapes, gradient compositions, glyph-style decoration. |
 | **B · Hand-built SVG** | Designed in Figma, optimised, animated declaratively. | Illustrations more complex than CSS handles cleanly — a loaf, a mascot, a workflow diagram. |
-| **C · Generated illustration** | Gemini 3 Pro Image / Nanobanana / Recraft V4, with seed-locking + reference-image + post-processing. **As of v0.9.0, a peer of Tier B** when the discipline is followed (see [`generated-imagery.md`](generated-imagery.md)). | Characters, scenes, atmosphere, brand-coherent illustration sets. The seed-and-reference rule is non-negotiable. Always post-processed. |
+| **C · Generated illustration** | Nanobanana / Recraft V4 / Midjourney, with provenance + post-processing. | Characters or specific scenes that hand-build can't economically reach. Always post-processed. |
 | **D · Library illustration** | Storyset / Humaaans / unDraw, customised with brand colours. | When budget and timeline force a shortcut — and even then, never unmodified. |
 | **E · Lottie animation** | LAST RESORT. Only when complex character motion can't be hand-built. | Articulated figures, multi-frame mascot loops. Never for "spinning logo" or "checkmark draw" — those are CSS. |
 

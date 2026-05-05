@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Codeline — changelog</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+      color: #222222;
+      line-height: 1.5;
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 0 30px;
+    }
+    h1 {
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .lede {
+      color: #777777;
+      margin-bottom: 50px;
+      font-size: 16px;
+    }
+    .release {
+      margin-bottom: 50px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #eaeaea;
+    }
+    .release:last-child { border-bottom: none; }
+    .release h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .release time {
+      color: #999999;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 18px;
+    }
+    .release ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .release li {
+      padding: 8px 0 8px 17px;
+      position: relative;
+      color: #444444;
+    }
+    .release li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #cccccc;
+    }
+    .release li.added::before { color: #1aab30; content: "+"; }
+    .release li.fixed::before { color: #b08017; content: "·"; }
+    .release li.removed::before { color: #b53d3d; content: "−"; }
+    .release li code {
+      font-family: monospace;
+      background: #f4f4f4;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+    .release a {
+      color: #2050b8;
+      text-decoration: none;
+      transition: all 250ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    .release a:hover { color: #4070d8; text-decoration: underline; }
+    footer {
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid #eaeaea;
+      color: #aaaaaa;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Codeline · changelog</h1>
+  <p class="lede">A small dev-tools shop. Releases ship Tuesday mornings, twice a month.</p>
+
+  <article class="release">
+    <h2>v0.7.4</h2>
+    <time>2026-04-29</time>
+    <ul>
+      <li class="added">Add <code>--watch</code> flag to <code>codeline build</code> for incremental rebuilds (closes <a href="#">#412</a>).</li>
+      <li class="added">Add JSON output mode to <code>codeline lint</code>; pipe-friendly for CI.</li>
+      <li class="fixed">Fix <code>tsconfig.json</code> resolution failing when <code>extends</code> points outside the workspace root.</li>
+      <li class="fixed">Fix incorrect exit code (<code>0</code> instead of <code>1</code>) when <code>codeline lint</code> finds errors but no warnings.</li>
+      <li class="removed">Deprecate <code>--legacy-loader</code>; will be removed in v0.9.</li>
+    </ul>
+  </article>
+
+  <article class="release">
+    <h2>v0.7.3</h2>
+    <time>2026-04-15</time>
+    <ul>
+      <li class="fixed">Fix race condition in the file-watcher when many small files change simultaneously (e.g., during a <code>git checkout</code>).</li>
+      <li class="fixed">Fix the loader silently swallowing parse errors in <code>postcss</code> plugin chains.</li>
+      <li class="added">Add <code>codeline doctor</code> — a diagnostic command that checks node version, lockfile parity, and config validity.</li>
+    </ul>
+  </article>
+
+  <article class="release">
+    <h2>v0.7.2</h2>
+    <time>2026-04-01</time>
+    <ul>
+      <li class="added">Initial public release. Read the <a href="#">getting-started guide</a>.</li>
+    </ul>
+  </article>
+
+  <footer>
+    Codeline · MIT licensed · maintained by two engineers in Lisbon.
+  </footer>
+</body>
+</html>

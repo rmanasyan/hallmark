@@ -88,14 +88,6 @@ Wordmark hard-left, 4–5 inline text links (`Features · Pricing · Docs · Blo
 
 **Fix.** Pick from the routing table in [`component-cookbook.md`](component-cookbook.md) § Footers. Default to Ft1 Mast-headed, Ft2 Inline single line, Ft4 Dense colophon, Ft5 Statement, Ft6 Letter close, Ft7 Newsletter-first, or Ft8 Marquee scroll. Use Ft3 Index columns *only* on a genuine hub or docs root with a real sitemap — and even then, never with the social-icon row + tiny copyright tail.
 
-### Raw generated stills
-
-Shipping a Nanobanana / Gemini-image / Midjourney output without post-processing — no grain overlay, no asymmetric crop, no colour-grade toward the brand accent, no seed-locking across the project's image set.
-
-**Why it fails.** Reads as AI in milliseconds. Smooth surface, default lighting, perfect symmetry. The 2026 audience pattern-matches this faster than any other tell.
-
-**Fix.** Use the seed-and-reference rule + the post-processing checklist in [`generated-imagery.md`](generated-imagery.md). One reference, one seed, four post-processing moves (grain · asymmetric crop · accent-shift · optional hand-drawn frame). Skip any of these and the image reads as raw AI.
-
 ### Aurora-blob background
 
 Flowing organic mesh blobs in purple-to-pink-to-cyan, layered behind hero text. Looks "premium" until you've seen it on every Dribbble shot since 2022.

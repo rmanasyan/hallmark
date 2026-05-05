@@ -3,7 +3,7 @@
 **A design skill that studies what you admire — and rebuilds your content with it.**
 
 → Live demo: **[hallmark-murex.vercel.app](https://hallmark-murex.vercel.app)** · twenty-three themes, eight worked tests, press `T` to cycle.
-→ Current version: **v0.9.0** — adds the **Editorial** theme (open-design-inspired premium · warm cream + coral + Inter Tight × Playfair italic), a **watercolor + ink-wash sprinkle** across the marketing site (18 seeded plates from `google/gemini-3-pro-image` via Together AI), **generated-imagery.md** in the skill (Tier C promoted to peer of Tier B with seed-and-reference discipline + per-theme style-prompt table for all 23 themes), a power-user [`generate.mjs`](skill/_assets/scripts/generate.mjs) drop-in script, and selected open-design utilities (Roman-numeral section heads, corner-bracket image annotations, dark-slab section reversal, pulse animation, `.tnum` utility).
+→ Current version: **v0.9.0** — adds the **Editorial** theme (open-design-inspired premium · warm cream + coral + Inter Tight × Playfair italic) and a small kit of open-design utilities any theme can reach for: Roman-numeral section heads, corner-bracket image annotations, dark-slab section reversal, pulse animation for live indicators, and a `.tnum` tabular-numerals utility.
 → Previously in **v0.8**: genres (editorial · modern-minimal · atmospheric · playful), `design.md` for whole-project redesigns, the 2+1 font rule with 55-gate slop test, component-library exports, 9 nav archetypes (incl Floating pill), 8 footer archetypes, 4 hero polish patterns, contrast gates 46–50, nav/footer/hero structural gates 51–55.
 
 <table>

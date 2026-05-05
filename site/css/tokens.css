@@ -70,8 +70,8 @@
   --space-4xl: 10rem;
   --space-5xl: 13rem;
 
-  --section-gap: 8rem;
-  --section-head-gap: 2rem;
+  --section-gap: 6.5rem;
+  --section-head-gap: 1.5rem;
 
   --page-max:      76rem;
   --page-gutter:   clamp(1.25rem, 4vw, 3rem);
@@ -143,8 +143,8 @@
   --tracking-display: -0.03em;
   --tracking-label:   0.16em;
 
-  --section-gap: 7rem;
-  --section-head-gap: 1.75rem;
+  --section-gap: 6rem;
+  --section-head-gap: 1.5rem;
   --measure: 60ch;
 }
 
@@ -188,8 +188,8 @@
   --lh-tight: 0.94;
   --lh-snug:  1.08;
 
-  --section-gap: 6rem;
-  --section-head-gap: 1.5rem;
+  --section-gap: 5.5rem;
+  --section-head-gap: 1.25rem;
 
   --rule-hair: 1px;
   --rule-fine: 3px;
@@ -236,8 +236,8 @@
   --lh-tight:   1.05;
   --lh-snug:    1.22;
 
-  --section-gap: 9rem;
-  --section-head-gap: 2.5rem;
+  --section-gap: 6.5rem;
+  --section-head-gap: 1.5rem;
   --measure: 58ch;
 }
 
@@ -284,8 +284,8 @@
   --lh-normal:  1.55;
   --lh-relaxed: 1.7;
 
-  --section-gap: 12rem;
-  --section-head-gap: 3.5rem;
+  --section-gap: 6.5rem;
+  --section-head-gap: 1.75rem;
   --measure: 56ch;
   --page-max: 64rem;
 }
@@ -335,8 +335,8 @@
   --lh-normal:  1.55;
   --lh-relaxed: 1.65;
 
-  --section-gap: 6.5rem;
-  --section-head-gap: 1rem;
+  --section-gap: 6rem;
+  --section-head-gap: 1.5rem;
   --measure: 58ch;
 }
 
@@ -426,7 +426,7 @@
   --lh-tight: 0.86;
   --lh-snug:  1.0;
 
-  --section-gap: 5rem;
+  --section-gap: 5.5rem;
   --section-head-gap: 1.25rem;
 
   --rule-hair: 1px;
@@ -475,8 +475,8 @@
   --lh-snug:  1.32;
   --lh-normal: 1.55;
 
-  --section-gap: 9rem;
-  --section-head-gap: 2rem;
+  --section-gap: 6.5rem;
+  --section-head-gap: 1.75rem;
   --measure: 52ch;
   --page-max: 60rem;
 }
@@ -525,8 +525,8 @@
   --lh-normal: 1.55;
   --lh-relaxed: 1.7;
 
-  --section-gap: 10rem;
-  --section-head-gap: 2.5rem;
+  --section-gap: 6.5rem;
+  --section-head-gap: 1.5rem;
   --measure: 56ch;
 }
 
@@ -582,8 +582,8 @@
   --space-2xl: 3rem;
   --space-3xl: 4.5rem;
 
-  --section-gap: 4.5rem;
-  --section-head-gap: 1rem;
+  --section-gap: 5.5rem;
+  --section-head-gap: 1.25rem;
   --measure: 64ch;
   --page-max: 84rem;
 }
@@ -628,8 +628,8 @@
   --lh-tight: 0.94;
   --lh-snug:  1.06;
 
-  --section-gap: 6rem;
-  --section-head-gap: 1.5rem;
+  --section-gap: 5.5rem;
+  --section-head-gap: 1.25rem;
 
   --rule-hair: 1px;
   --rule-fine: 2px;
@@ -678,6 +678,9 @@
 
   --tracking-display: -0.022em;
   --tracking-label:   0.08em;
+  --section-gap: 6.5rem;
+  --section-head-gap: 1.5rem;
+
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -720,6 +723,9 @@
   --tracking-label:   0.04em;
 
   --lh-tight: 0.96;
+  --section-gap: 6rem;
+  --section-head-gap: 1.5rem;
+
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -762,6 +768,9 @@
 
   --lh-tight: 0.92;
   --lh-snug:  1.10;
+  --section-gap: 6rem;
+  --section-head-gap: 1.5rem;
+
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -813,8 +822,8 @@
   --lh-relaxed: 1.7;
 
   /* Generous whitespace — the page breathes */
-  --section-gap:      10rem;
-  --section-head-gap: 2.5rem;
+  --section-gap: 6.5rem;
+  --section-head-gap: 1.5rem;
   --space-2xl:        4.5rem;
   --space-3xl:        7rem;
   --space-4xl:        11rem;
@@ -864,8 +873,8 @@
   --lh-tight: 1.04;
   --lh-snug:  1.18;
 
-  --section-gap:      9rem;
-  --section-head-gap: 2rem;
+  --section-gap: 6.5rem;
+  --section-head-gap: 1.5rem;
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -904,6 +913,9 @@
   --tracking-display: -0.025em;
   --tracking-tight:   -0.015em;
   --tracking-label:   0.05em;
+  --section-gap: 6rem;
+  --section-head-gap: 1.5rem;
+
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -941,6 +953,9 @@
   --tracking-display: -0.035em;
   --tracking-tight:   -0.02em;
   --tracking-label:   0.04em;
+  --section-gap: 6rem;
+  --section-head-gap: 1.5rem;
+
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -982,6 +997,9 @@
 
   --lh-tight: 1.05;
   --lh-snug:  1.18;
+  --section-gap: 6.5rem;
+  --section-head-gap: 1.5rem;
+
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -1020,6 +1038,9 @@
   --tracking-display: -0.03em;
   --tracking-tight:   -0.018em;
   --tracking-label:   0.08em;
+  --section-gap: 6rem;
+  --section-head-gap: 1.5rem;
+
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -1058,6 +1079,9 @@
   --tracking-display: -0.025em;
   --tracking-tight:   -0.012em;
   --tracking-label:   0.06em;
+  --section-gap: 6rem;
+  --section-head-gap: 1.5rem;
+
 }
 
 /* ──────────────────────────────────────────────────────────────
@@ -1135,5 +1159,8 @@
   --tracking-display: -0.04em;        /* tight, magazine-shaped */
   --tracking-tight:   -0.018em;
   --tracking-label:   0.10em;
+  --section-gap: 6rem;
+  --section-head-gap: 1.5rem;
+
 }
 

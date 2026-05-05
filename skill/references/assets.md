@@ -99,16 +99,16 @@ import { siGithub } from 'simple-icons/icons';
 
 ## Generated illustration (Tier C in the enrichment hierarchy)
 
-**As of v0.9.0, Tier C is a peer of Tier B (hand-built SVG)** when used with the seed-and-reference discipline plus post-processing. See [`generated-imagery.md`](generated-imagery.md) for the full recipe — that file is the canonical place; this section is the model catalog.
+When characters or specific scenes can't be hand-built economically. **Always post-process.** See [`custom-craft.md`](custom-craft.md) Tier E for full discipline.
 
 ### Canon
 
-| Model | Hosted via | Cost | Best for | Output |
+| Model | URL | Cost | Best for | Output |
 | --- | --- | --- | --- | --- |
-| **[Gemini 3 Pro Image / Nano Banana Pro](https://ai.google.dev/gemini-api/docs/image-generation)** | **Together AI** (`google/gemini-3-pro-image`) — $0.134/image at 2K | $0.134 / 2K · $0.034 / 1K | Brand-coherent illustration sets via reference-image character consistency, fast iteration, the 2026 Tier C default | PNG |
+| **[Nanobanana 2 / Gemini 2.5 Flash Image](https://ai.google.dev/gemini-api/docs/image-generation)** | Google AI | $0.039 / image | Character consistency across panels, fast iteration, brand-style adherence via reference images, infographics with text | PNG (transparent supported) |
 | **[Recraft V4](https://www.recraft.ai/)** | recraft.ai | ~$0.04 / image | **The only model with production-grade SVG output.** Logos, icons, illustrations that need to scale. | SVG + PNG |
 | **[Midjourney v8](https://www.midjourney.com)** | midjourney.com | ~$0.14 / image | Aesthetic beauty, atmospheric stills, artistic direction | PNG |
-| **[Flux 2](https://blackforestlabs.ai/)** | Together AI / Black Forest Labs | ~$0.03 / image | Photorealism — skin, fabric, product detail, hands | PNG |
+| **[Flux 2](https://blackforestlabs.ai/)** | blackforestlabs.ai | ~$0.03 / image | Photorealism — skin, fabric, product detail, hands | PNG |
 
 ### The rules
 
