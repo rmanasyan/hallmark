@@ -1,6 +1,6 @@
 ---
 name: hallmark
-description: Use this skill ONLY when the user explicitly wants Hallmark's anti-AI-slop discipline applied. Triggers are narrow on purpose — (1) the user names one of Hallmark's verbs by name (`audit`, `refine`, `redesign`, `study`, e.g. "audit this UI", "redesign this page", "refine this component", "study this screenshot"); (2) the user says a UI "feels AI-generated", "looks templated", "looks like every other AI page", or asks to "make it less AI-generated"; (3) the user attaches a screenshot of a design they admire and wants the DNA extracted (the `study` verb); (4) the user invokes the skill by name ("use Hallmark", "/hallmark"). DO NOT trigger on generic UI requests — "design a button", "build me a form", "make a dashboard", "build a landing page", "add a navbar". Those are handled by frontend-design or other UI skills. Hallmark is the opinionated anti-slop ruleset; it should only run when the user explicitly wants that specific discipline, not as a default UI builder.
+description: Use this skill ONLY when the user explicitly wants Hallmark's anti-AI-slop discipline applied. Triggers are narrow on purpose — (1) the user names one of Hallmark's three explicit verbs (`audit`, `redesign`, `study`, e.g. "audit this UI", "redesign this page", "study this screenshot"); (2) the user says a UI "feels AI-generated", "looks templated", "looks like every other AI page", or asks to "make it less AI-generated"; (3) the user attaches a screenshot of a design they admire and wants the DNA extracted (the `study` verb); (4) the user invokes the skill by name ("use Hallmark", "/hallmark"). DO NOT trigger on generic UI requests — "design a button", "build me a form", "make a dashboard", "build a landing page", "add a navbar". Those are handled by frontend-design or other UI skills. Hallmark is the opinionated anti-slop ruleset; it should only run when the user explicitly wants that specific discipline, not as a default UI builder.
 version: 1.0.0
 ---
 
@@ -329,7 +329,7 @@ By the time you reach this step, one of three things is true:
 
 **Custom is a quiet branch, not a default question.** Most briefs route to catalog and the user never sees the words "catalog" or "custom." The 23 named themes plus the rotation rule already deliver structural variety; the fork is reserved for when the brief specifically asks for a tuned look the catalog can't carry.
 
-A custom theme is a **complete** OKLCH palette + font pairing tuned to the brief — not a one-off colour swap, not an excuse to bypass the rules. Every constraint in [`color.md`](references/color.md), [`typography.md`](references/typography.md), and [`anti-patterns.md`](references/anti-patterns.md) still applies. The 55 slop-test gates fire unchanged. The Step 5 preview block surfaces the palette + pairing in plain text **before** any code is emitted, so the user can redirect.
+A custom theme is a **complete** OKLCH palette + font pairing tuned to the brief — not a one-off colour swap, not an excuse to bypass the rules. Every constraint in [`color.md`](references/color.md), [`typography.md`](references/typography.md), and [`anti-patterns.md`](references/anti-patterns.md) still applies. The 65 slop-test gates fire unchanged. The Step 5 preview block surfaces the palette + pairing in plain text **before** any code is emitted, so the user can redirect.
 
 The diversification rule is theme-route-blind: a custom run that follows another custom (or a catalog) must differ on at least one of the three axes from the previous entry, same as catalog-vs-catalog. Custom entries record their three axes explicitly into `.hallmark/log.json` (see [`custom-theme.md`](references/custom-theme.md) § F).
 
@@ -399,7 +399,7 @@ Before emitting any code, output a tight summary of what you're about to ship. T
 - **Enrichment** · none (typography only)
 - **Sections** · Hero · Logos · Stats · Features · Testimonials · Pricing · FAQ · CTA · Footer
 - **Motion** · counter · pricing-lift · pulse-once
-- **Slop test** · 55 / 55 ✓ (run after Build)
+- **Slop test** · 65 / 65 ✓ (run after Build)
 - **Diversification** · differs from Pastel on display style + accent hue
 ```
 
@@ -410,7 +410,7 @@ Before emitting any code, output a tight summary of what you're about to ship. T
 3. **Enrichment** — the chosen archetype + tier, or *none (typography only)*.
 4. **Sections** — section names separated by ` · `, in DOM order.
 5. **Motion** — microinteraction primitives separated by ` · `, or *none — typography only*. Always under three primitives per the [`microinteractions.md`](references/microinteractions.md) hard rules.
-6. **Slop test** — `55 / 55 ✓` if all gates pass, or `N / 55 — fails: <gate numbers>` if any are open. Run the slop test BEFORE writing this row; the slop test is Step 7.
+6. **Slop test** — `65 / 65 ✓` if all gates pass, or `N / 65 — fails: <gate numbers>` if any are open. Run the slop test BEFORE writing this row; the slop test is Step 7.
 7. **Diversification** *(optional, only when `.hallmark/log.json` has prior entries)* — what axes differ vs the previous run.
 
 **Three more sample preview blocks** for the model to imitate, varied across macrostructure types:
@@ -423,7 +423,7 @@ Before emitting any code, output a tight summary of what you're about to ship. T
 > - **Enrichment** · Tier-B hand-built SVG (a 60-line coffee bean with `@property --rise` 6 s breathing-loop)
 > - **Sections** · Masthead · Letter · Three Notes · Visit · Colophon
 > - **Motion** · breathing-loop on bean only (respects `prefers-reduced-motion`)
-> - **Slop test** · 55 / 55 ✓
+> - **Slop test** · 65 / 65 ✓
 > - **Diversification** · first run for this project
 
 *Bento Grid (SaaS, motion-on):*
@@ -434,7 +434,7 @@ Before emitting any code, output a tight summary of what you're about to ship. T
 > - **Enrichment** · E1 Clipped-Edge Demo Video, Tier-A CSS-art trace waterfall
 > - **Sections** · Hero · 6-tile Bento (stat · sparkline · quote · code · integrations · spotlight) · Index Footer
 > - **Motion** · counter · pricing-lift · CSS marquee on integrations strip
-> - **Slop test** · 55 / 55 ✓
+> - **Slop test** · 65 / 65 ✓
 > - **Diversification** · differs from Plain on paper hue (light-cool vs pure-white) + accent (indigo vs ink-blue)
 
 *Manifesto (declarative, no enrichment):*
@@ -445,7 +445,7 @@ Before emitting any code, output a tight summary of what you're about to ship. T
 > - **Enrichment** · none (typography only — voice carries the brand)
 > - **Sections** · Masthead · Title · Five Declarations · Bleed Band · What We Refuse · Working Rules · Practice · Reading · Colophon
 > - **Motion** · none — typography only
-> - **Slop test** · 55 / 55 ✓
+> - **Slop test** · 65 / 65 ✓
 > - **Diversification** · differs from Linen on paper band (dark vs light) + display style (display-heavy vs geometric-sans)
 
 *Custom (Coffeebox archival café):*
@@ -456,7 +456,7 @@ Before emitting any code, output a tight summary of what you're about to ship. T
 > - **Enrichment** · Tier-A pure-CSS coffee bean (60-line SVG, breathing-loop optional)
 > - **Sections** · Masthead · Letter · Three Notes · Visit · Colophon
 > - **Motion** · breathing-loop on bean (with reduced-motion fallback)
-> - **Slop test** · 55 / 55 ✓
+> - **Slop test** · 65 / 65 ✓
 > - **Diversification** · custom axes: light / italic-serif / chromatic-terracotta — differs from previous catalog Linen on accent hue + display style
 
 If any slop-test gate fails when you reach Step 7, return to the relevant Build step, fix it, and **re-emit the preview block** with the corrected slop-test row. The preview is the durable summary; it's wrong to ship if it lies.
@@ -484,7 +484,7 @@ Always:
 
 ### 7. The slop test
 
-Before handing back, run the output through the 55-gate slop test in [`references/slop-test.md`](references/slop-test.md). Every answer must be **no**. Load that file at this step (not earlier — it isn't needed until handoff). The active genre matters: some gates are universal, some are genre-scoped (atmospheric loosens the radial-bloom gate; modern-minimal loosens the zero-chroma neutral gate; etc.). The full per-genre overrides are listed inline in `slop-test.md`.
+Before handing back, run the output through the 65-gate slop test in [`references/slop-test.md`](references/slop-test.md). Every answer must be **no**. Load that file at this step (not earlier — it isn't needed until handoff). The active genre matters: some gates are universal, some are genre-scoped (atmospheric loosens the radial-bloom gate; modern-minimal loosens the zero-chroma neutral gate; etc.). The full per-genre overrides are listed inline in `slop-test.md`.
 
 Run the slop test BEFORE writing the Slop test row in the Step 5 preview block — that row reflects the actual outcome of this step.
 
