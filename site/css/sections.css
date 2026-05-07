@@ -635,7 +635,6 @@
 [data-theme="sport"] .skill-row__lede,
 [data-theme="almanac"] .skill-row__lede,
 [data-theme="studio"] .skill-row__lede,
-[data-theme="pastel"] .skill-row__lede,
 [data-theme="quiet"] .skill-row__lede,
 [data-theme="bloom"] .skill-row__lede,
 [data-theme="aurora"] .skill-row__lede,
@@ -841,11 +840,6 @@
   border: 1px solid var(--color-rule-2);
   border-radius: 12px;
   box-shadow: 0 0 24px -10px color-mix(in oklch, var(--color-accent) 35%, transparent);
-}
-[data-theme="pastel"] .brief-output {
-  border: 1px solid var(--color-rule);
-  border-radius: 12px;
-  box-shadow: 0 4px 24px -16px oklch(20% 0.04 270 / 0.18);
 }
 [data-theme="plume"] .brief-output {
   border: 1px solid var(--color-rule);

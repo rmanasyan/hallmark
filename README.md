@@ -2,7 +2,7 @@
 
 **A design skill for Claude Code, Cursor, and Codex that refuses to look AI-generated.**
 
-[Live demo →](https://hallmark-murex.vercel.app) &nbsp;·&nbsp; twenty-three themes &nbsp;·&nbsp; four verbs &nbsp;·&nbsp; press `T` to cycle.
+[Live demo →](https://hallmark-murex.vercel.app) &nbsp;·&nbsp; twenty-two themes &nbsp;·&nbsp; four verbs &nbsp;·&nbsp; press `T` to cycle.
 
 Powered by Together AI.
 
@@ -10,7 +10,7 @@ Powered by Together AI.
   <img src="site/OG-hallmark.png" alt="Hallmark — A design skill that refuses to look AI-generated" />
 </p>
 
-Hallmark encodes the anti-AI-slop consensus — typography, colour, layout, motion, microinteractions, structural variety — into one opinionated rule-set. It picks a macrostructure for the brief, dresses it in one of twenty-three themes, runs sixty-five slop-test gates plus a pre-emit self-critique before handing back, and refuses the on-distribution defaults every LLM was trained into.
+Hallmark encodes the anti-AI-slop consensus — typography, colour, layout, motion, microinteractions, structural variety — into one opinionated rule-set. It picks a macrostructure for the brief, dresses it in one of twenty-two themes, runs sixty-five slop-test gates plus a pre-emit self-critique before handing back, and refuses the on-distribution defaults every LLM was trained into.
 
 > **v1.0.0** — pre-emit critique on six axes, honest-copy enforcement, locked-token discipline, re-drawn-chrome ban, and a no-wrap rule for clickable text. Five new slop-test gates (56–60). The full rule-set lives in [`skill/SKILL.md`](skill/SKILL.md) and [`skill/references/`](skill/references/).
 
@@ -93,7 +93,7 @@ Each page is its own self-contained HTML + CSS — no shared theme, no shared la
 - **[`SKILL.md`](skill/SKILL.md)** — the routing file. Six-step design flow (including `Step 2.5 · Check project memory` reading `.hallmark/log.json`), 65-gate slop test, output contract, always-on `tokens.css` export.
 - **[`references/`](skill/references/)** — short, opinionated rule files: typography, colour, layout, motion, microinteractions, interaction-and-states (with the input-state checklist), responsive, copy, anti-patterns, the 21 named macrostructures, the **40 component archetypes** with variation knobs (9 hero · 6 feature · 4 CTA · 4 testimonial · **8 footer · 9 nav**), the **4 hero polish patterns** (in `hero-enrichment.md`), the 6 primitive structure axes, the vision-extraction protocol for `study`, hero enrichment, custom-craft (CSS art over Lottie), assets, the slop-test gates, four genre rule-overlays (each with nav + footer voice routing), per-verb dispatchers, and the export-formats reference (Tailwind / DTCG / shadcn / tokens.css).
 - **[`docs/`](docs/)** — human-reading content: **[`recipes.md`](docs/recipes.md)** (8 worked briefs + a canonical try-it prompt) and **[`study-examples.md`](docs/study-examples.md)** (3 worked DNA-extractions). Not auto-loaded by the skill.
-- **[`site/`](site/)** — a self-demonstrating landing page. Hand-written HTML + CSS + ES module, no framework, no build step. **Twenty-three themes** clustered into four genres: **editorial** (Specimen, Editorial, Atelier, Newsprint, Salon, Linen, Almanac, Garden, Studio, Sport, Riso, Brutal, Manifesto), **modern-minimal** (Quiet, Coral, Violet), **atmospheric** (Midnight, Terminal, Bloom, Aurora, Halo), **playful** (Pastel, Plume). Switching themes literally rebuilds the page — different hero archetype, different footer archetype, different nav archetype.
+- **[`site/`](site/)** — a self-demonstrating landing page. Hand-written HTML + CSS + ES module, no framework, no build step. **Twenty-two themes** clustered into four genres: **editorial** (Specimen, Editorial, Atelier, Newsprint, Salon, Linen, Almanac, Garden, Studio, Sport, Riso, Brutal, Manifesto), **modern-minimal** (Quiet, Coral, Violet), **atmospheric** (Midnight, Terminal, Bloom, Aurora, Halo), **playful** (Plume). Switching themes literally rebuilds the page — different hero archetype, different footer archetype, different nav archetype.
 
 ---
 

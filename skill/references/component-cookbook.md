@@ -901,7 +901,7 @@ The full recipe — the four laws (height-constant, transform-for-offset, cross-
 | Genre / cluster | Default nav | Acceptable also |
 | --- | --- | --- |
 | editorial (Newsprint · Salon · Garden · Linen · Atelier) | **N6 Masthead** | N1, N9 |
-| modern-minimal (Specimen · Pastel · Quiet · Coral · Violet · Plume) | **N5 Floating pill** | N1, N9 |
+| modern-minimal (Specimen · Quiet · Coral · Violet · Plume) | **N5 Floating pill** | N1, N9 |
 | atmospheric (Bloom · Aurora · Halo · Midnight) | **N5 Floating pill** (blur backdrop sells the mood) | N9, N4 |
 | playful (Brutal · Manifesto · Sport · Riso · Studio) | **N7 Brutal slab** | N1, N3 |
 | terminal / CLI (Terminal) | **N8 Terminal command** | N4 ⌘K-only |

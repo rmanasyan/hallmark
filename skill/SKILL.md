@@ -29,7 +29,7 @@ Hallmark has one default behaviour and three explicit verbs.
 
 If the user types anything that does not clearly map to `audit`, `redesign`, or `study`, treat it as default. If the user attaches an image without a verb prefix, ask: *"Should I `study` this (extract the DNA), or should I treat it as a reference for a fresh build?"*
 
-The default Design flow always picks a theme. By default it picks one of the **23 named themes** — the *catalog* — and rotates among them per the diversification rule. There is also a quiet *custom* branch that constructs a one-off OKLCH palette + free-font pairing for the brief; the custom route fires **only when the brief carries a creative-intent signal** (the user names a brand colour, names a multi-attribute vibe the catalog can't carry, or explicitly asks for a custom theme). For vanilla briefs, the user never sees the words "catalog" or "custom" — the catalog runs silently. See Step 1 (signal detection) and Step 2.6 (dispatch); the protocol lives in [`references/custom-theme.md`](references/custom-theme.md).
+The default Design flow always picks a theme. By default it picks one of the **22 named themes** — the *catalog* — and rotates among them per the diversification rule. There is also a quiet *custom* branch that constructs a one-off OKLCH palette + free-font pairing for the brief; the custom route fires **only when the brief carries a creative-intent signal** (the user names a brand colour, names a multi-attribute vibe the catalog can't carry, or explicitly asks for a custom theme). For vanilla briefs, the user never sees the words "catalog" or "custom" — the catalog runs silently. See Step 1 (signal detection) and Step 2.6 (dispatch); the protocol lives in [`references/custom-theme.md`](references/custom-theme.md).
 
 ---
 
@@ -228,7 +228,7 @@ If two non-default signals fire (rare), ask one short follow-up: *"This brief fi
 
 State the genre out loud at Step 2.5 alongside the macrostructure and theme picks: *"Genre: atmospheric. Macrostructure: Marquee Hero. Theme: Bloom (atmospheric cluster)."*
 
-**Theme route — only surface when the brief signals it.** Hallmark has two theme routes: **catalog** (the 23 named themes — Specimen, Atelier, Pastel, Brutal, Salon, Newsprint, Linen, Studio, Manifesto, Terminal, Midnight, Almanac, Garden, Quiet, Riso, Sport, Bloom, Coral, Violet, Aurora, Halo, Plume, Editorial) and **custom** (an OKLCH palette + free-font pairing tuned to this one brief). **Catalog is the default.** The catalog rotation is *scoped to the genre's theme cluster* — atmospheric rotates Bloom/Midnight/Terminal, modern-minimal stays on Quiet, playful stays on Pastel, editorial walks the remaining twelve. Do **not** offer the user a choice on every prompt — that's friction, not discipline. Surface the catalog/custom fork only when the brief carries one of these signals:
+**Theme route — only surface when the brief signals it.** Hallmark has two theme routes: **catalog** (the 22 named themes — Specimen, Atelier, Brutal, Salon, Newsprint, Linen, Studio, Manifesto, Terminal, Midnight, Almanac, Garden, Quiet, Riso, Sport, Bloom, Coral, Violet, Aurora, Halo, Plume, Editorial) and **custom** (an OKLCH palette + free-font pairing tuned to this one brief). **Catalog is the default.** The catalog rotation is *scoped to the genre's theme cluster* — atmospheric rotates Bloom/Midnight/Terminal, modern-minimal stays on Quiet, playful stays on Plume, editorial walks the remaining twelve. Do **not** offer the user a choice on every prompt — that's friction, not discipline. Surface the catalog/custom fork only when the brief carries one of these signals:
 
 - The user explicitly says **custom theme** / **tailored to our brand** / **make it ours** / **something unique** / **play with the colors and fonts**.
 - The user names a **specific brand colour** as the anchor (e.g., "use our terracotta", "the brand red is hex #c0392b", "anchor on sea-blue").
@@ -237,7 +237,7 @@ State the genre out loud at Step 2.5 alongside the macrostructure and theme pick
 
 If any of those fires, ask one short follow-up before picking: *"This brief reads like a custom palette would fit better than the catalog. Want me to construct a custom OKLCH palette + free-font pairing tuned to <one-line summary of the vibe>, or stay on the catalog for variety + speed?"* Wait for the user to say custom (or catalog). Default is still catalog — silence routes to catalog, not custom.
 
-If none of the signals fires, **proceed with catalog silently. Do not mention the fork.** Most briefs don't need a custom theme — the catalog's 23 themes plus the rotation rule already deliver structural variety. See Step 2.6 for the dispatch.
+If none of the signals fires, **proceed with catalog silently. Do not mention the fork.** Most briefs don't need a custom theme — the catalog's 22 themes plus the rotation rule already deliver structural variety. See Step 2.6 for the dispatch.
 
 **If the user opts out or skips fields** (says "go ahead", "you pick", "skip", "just build it", "don't ask", answers some fields and leaves others blank, or simply doesn't engage with the question after one prompt):
 
@@ -263,7 +263,7 @@ Before loading any visual ruleset, **pick one of the twenty-one named macrostruc
 **Theme-diversification rule (mandatory).** Picking a different macrostructure isn't enough on its own — two consecutive Hallmark outputs can share a theme even if their structures differ, and the result reads as repetition. Two consecutive themes must differ on **at least one** of three axes:
 
 - **Paper band** — dark (L < 30 %) / mid (30–85 %) / light (> 85 %), per the theme's `--color-paper` lightness
-- **Display style** — italic-serif (Specimen, Studio, Atelier) / roman-serif (Newsprint, Salon, Linen) / geometric-sans (Pastel, Manifesto) / mono (Terminal) / display-condensed-italic (Sport) / display-heavy (Brutal) / system-native (Quiet) / risograph-bold (Riso)
+- **Display style** — italic-serif (Specimen, Studio, Atelier) / roman-serif (Newsprint, Salon, Linen) / geometric-sans (Plume, Manifesto) / mono (Terminal) / display-condensed-italic (Sport) / display-heavy (Brutal) / system-native (Quiet) / risograph-bold (Riso)
 - **Accent hue** — warm (red / orange / amber: 10–60°) / cool (blue / indigo / cyan: 200–300°) / neutral (no chromatic accent: Quiet) / chromatic-other (green: Studio · sage: Garden · phosphor: Terminal)
 
 If the previous output was Specimen (light · italic-serif · warm), the next can be Studio (light · italic-serif · chromatic-green) — the *accent hue* differs. But the next can't be Salon (light · roman-serif · warm) which only differs on display style and shares both paper band and accent — pick a more distant theme.
@@ -288,7 +288,7 @@ If the project has a `.hallmark/log.json` file (created by previous Hallmark run
 
 ```json
 [
-  { "date": "2026-04-30", "macrostructure": "Bento Grid",   "theme": "Pastel",  "enrichment": "E1 clipped-edge",  "brief": "Tracejam · SaaS observability" },
+  { "date": "2026-04-30", "macrostructure": "Bento Grid",   "theme": "Linen",   "enrichment": "E1 clipped-edge",  "brief": "Tracejam · SaaS observability" },
   { "date": "2026-04-28", "macrostructure": "Long Document","theme": "Linen",   "enrichment": "E5 hand-built SVG", "brief": "Maple Street Bread · bakery" },
   { "date": "2026-04-25", "macrostructure": "Manifesto",    "theme": "Manifesto","enrichment": "none",            "brief": "Meridian · studio manifesto" }
 ]
@@ -309,7 +309,7 @@ If the project has a CSS stamp but no `log.json`, infer one entry from the stamp
 
 Then the theme rotation, on the next line:
 
-> *"Last 3 themes: Pastel · Plain · Salon. Picking from {Newsprint, Atelier, Linen, Studio} — Newsprint differs on display style and accent hue."*
+> *"Last 3 themes: Linen · Plain · Salon. Picking from {Newsprint, Atelier, Studio, Garden} — Newsprint differs on display style and accent hue."*
 
 **Three sample shapes** to imitate:
 
@@ -324,10 +324,10 @@ The rotation block keeps the user inside the discipline without making them read
 By the time you reach this step, one of three things is true:
 
 1. **The user named custom** (because they said so, or because Step 1's signal detection fired and they confirmed) → load [`references/custom-theme.md`](references/custom-theme.md), ask the **one** follow-up (vibe in 4–8 words + optional anchor colour), construct the OKLCH palette + free-font pairing, compute the three axis values (paper-band / display-style / accent-hue), then continue to Step 3.
-2. **The user named catalog** (or implicitly accepted it by not naming custom) → pick one of the 23 named themes per the diversification rule above. Existing flow — continue to Step 3.
+2. **The user named catalog** (or implicitly accepted it by not naming custom) → pick one of the 22 named themes per the diversification rule above. Existing flow — continue to Step 3.
 3. **Neither was discussed** (Step 1's signals didn't fire — vanilla brief) → default to **catalog**. Do not pause. Do not ask. Continue to Step 3.
 
-**Custom is a quiet branch, not a default question.** Most briefs route to catalog and the user never sees the words "catalog" or "custom." The 23 named themes plus the rotation rule already deliver structural variety; the fork is reserved for when the brief specifically asks for a tuned look the catalog can't carry.
+**Custom is a quiet branch, not a default question.** Most briefs route to catalog and the user never sees the words "catalog" or "custom." The 22 named themes plus the rotation rule already deliver structural variety; the fork is reserved for when the brief specifically asks for a tuned look the catalog can't carry.
 
 A custom theme is a **complete** OKLCH palette + font pairing tuned to the brief — not a one-off colour swap, not an excuse to bypass the rules. Every constraint in [`color.md`](references/color.md), [`typography.md`](references/typography.md), and [`anti-patterns.md`](references/anti-patterns.md) still applies. The 65 slop-test gates fire unchanged. The Step 5 preview block surfaces the palette + pairing in plain text **before** any code is emitted, so the user can redirect.
 
@@ -401,7 +401,7 @@ Before emitting any code, output a tight summary of what you're about to ship. T
 - **Sections** · Hero · Logos · Stats · Features · Testimonials · Pricing · FAQ · CTA · Footer
 - **Motion** · counter · pricing-lift · pulse-once
 - **Slop test** · 65 / 65 ✓ (run after Build)
-- **Diversification** · differs from Pastel on display style + accent hue
+- **Diversification** · differs from Linen on display style + accent hue
 ```
 
 **Six required bullets, one optional, plus a CTA line:**
@@ -437,7 +437,7 @@ Skip the CTA line when (a) the build is component-scope, or (b) `design.md` alre
 > **Hallmark · v1.0.0**
 >
 > - **Macrostructure** · Bento Grid
-> - **Theme** · Pastel (light cool paper · indigo accent · geometric Geist)
+> - **Theme** · Linen (cool slate paper · steel-blue accent · geometric sans)
 > - **Enrichment** · E1 Clipped-Edge Demo Video, Tier-A CSS-art trace waterfall
 > - **Sections** · Hero · 6-tile Bento (stat · sparkline · quote · code · integrations · spotlight) · Index Footer
 > - **Motion** · counter · pricing-lift · CSS marquee on integrations strip

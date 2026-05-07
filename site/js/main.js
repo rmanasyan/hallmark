@@ -53,7 +53,6 @@ const THEMES = {
   almanac: "Almanac",
   sport: "Sport",
   studio: "Studio",
-  pastel: "Pastel",
   riso: "Riso",
   quiet: "Quiet",
   bloom: "Bloom",
@@ -84,7 +83,6 @@ const ARCHETYPES = {
   manifesto: { hero: "marquee", footer: "colophon" },
   sport: { hero: "stat-led", footer: "colophon" },
   studio: { hero: "letter", footer: "colophon" },
-  pastel: { hero: "bloom", footer: "colophon" },
   riso: { hero: "quote-led", footer: "colophon" },
   quiet: { hero: "split", footer: "colophon" },
   bloom: { hero: "marquee", footer: "colophon" },
@@ -124,8 +122,7 @@ const THEME_GENRES = {
   terminal:  "atmospheric",
   aurora:    "atmospheric",
   halo:      "atmospheric",
-  // playful — post-Linear soft school (2 themes)
-  pastel:    "playful",
+  // playful — post-Linear soft school (1 theme)
   plume:     "playful",
   // editorial — open-design-inspired premium (added v1.0.0)
   editorial: "editorial",
@@ -134,7 +131,7 @@ const THEME_GENRES = {
 /* — Locked hero title —————————————————————————————————
    The H1 string is the same across every theme. Only the visual
    treatment swaps — italic vs roman, serif vs sans, all-caps vs not.
-   The page is the demo: one sentence, twenty-three distinct designs. */
+   The page is the demo: one sentence, twenty-two distinct designs. */
 const HERO_TITLE = "A design skill that refuses to look AI-generated.";
 
 /* — Per-theme copy fixtures —————————————————————————————
@@ -277,7 +274,7 @@ const COPY = {
     quote: "An almanac is a book that knows where to look.",
     attrib: "Almanac, frontispiece",
     salutation: "Reference note,",
-    letterBody: "This page is a reference, not an argument. The numbers are the point: 21 macrostructures, 40 archetypes, 23 themes, 55 slop-test gates. Cross-referenced so the next page Hallmark builds is genuinely different from the last.",
+    letterBody: "This page is a reference, not an argument. The numbers are the point: 21 macrostructures, 40 archetypes, 22 themes, 65 slop-test gates. Cross-referenced so the next page Hallmark builds is genuinely different from the last.",
     signoff: "— editor",
     captionA: "Vol. III",
     captionB: "Plate 12",
@@ -401,27 +398,6 @@ const COPY = {
     signoff: "Yours,",
     captionA: "Studio · 2026",
     captionB: "Selected work",
-  },
-  pastel: {
-    eyebrow: "v0.4 · post-Linear soft",
-    title: HERO_TITLE,
-    lede: "A design skill that prefers soft surfaces and exact rules. Buttery paper. Slate ink. One indigo accent at low chroma — never a gradient.",
-    ctaLabel: "Open it",
-    proofLabel: "What it does",
-    proofA: "OKLCH-anchored palettes",
-    proofB: "Geist sans + Geist Mono",
-    proofC: "33-question slop test",
-    cta: "Open Hallmark",
-    stat: "33",
-    qualifier: "gates, soft-spoken.",
-    mockStat: "33",
-    quote: "Software can be soft and exact at once. That's the trick.",
-    attrib: "Pastel · field note",
-    salutation: "Hey there.",
-    letterBody: "This page is soft because the surface should be soft. The rules underneath are not — there are thirty-three of them, and the page passed every one. We hope it feels like the modern dev tools you already love, just with fewer gradients.",
-    signoff: "Take care,",
-    captionA: "Field note 04",
-    captionB: "Pastel",
   },
   riso: {
     eyebrow: "ed. 12 · printed today",

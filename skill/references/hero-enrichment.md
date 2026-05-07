@@ -454,7 +454,7 @@ When you ship enrichment, the macrostructure stamp records the choice:
  * polish: HP3 Cursor-spotlight (scoped to hero, reduced-motion fallback pinned at 50%/30%)
  * nav: N5 Floating pill · footer: Ft5 Statement
  * craft: tier-A CSS art (no real video — pure custom-built mockup)
- * theme: Pastel · accent: indigo ~3% · studied: no
+ * theme: Linen · accent: steel-blue ~3% · studied: no
  */
 ```
 

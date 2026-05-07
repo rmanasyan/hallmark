@@ -8,7 +8,7 @@ Brief mentions any of: *fun, consumer, casual, family, kids, friendly, approacha
 
 ## Themes that belong
 
-`Pastel` (canonical). The genre is small intentionally — playful is easy to overdo.
+`Plume` (canonical). The genre is small intentionally — playful is easy to overdo.
 
 ## Voice
 

@@ -133,7 +133,6 @@ After the schema is filled, map the source to one of Hallmark's named themes —
 | `paper_band: dark`, `accent: indigo`, `display: condensed/heavy` | **Midnight** |
 | `paper_band: dark`, `font: mono throughout`, `treatments: phosphor green or amber` | **Terminal** |
 | `paper_hue: warm-pink`, `treatments: riso / grain / off-register`, `display: heavy lowercase` | **Riso** |
-| `paper_hue: cool-lavender`, `display: soft geometric sans`, `accent: low-chroma indigo` | **Pastel** |
 | `paper_band: light`, `display: heavy black sans`, `accent: red flood` | **Brutal** |
 | `paper_band: dark`, `display: heavy uppercase`, `accent: red flood` | **Manifesto** |
 | `paper_hue: cool`, `density: dense`, `body: 2-3 column justified` | **Newsprint** |

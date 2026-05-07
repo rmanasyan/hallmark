@@ -84,7 +84,7 @@
      editorial themes stay square (Specimen, Newsprint, Salon, Linen),
      technical themes stay square (Almanac, Midnight, Terminal),
      brutalist themes get heavier borders (Brutal, Manifesto),
-     soft themes get rounded corners (Pastel, Garden, Studio, Quiet). */
+     soft themes get rounded corners (Garden, Studio, Quiet, Plume). */
   --radius-card:   0;          /* .code, .tell cards, .install__body */
   --radius-pill:   0;          /* CTAs, dot indicators, badges */
   --radius-input:  0;          /* form fields, single-line code blocks */
@@ -684,51 +684,6 @@
 }
 
 /* ──────────────────────────────────────────────────────────────
-   PASTEL — post-Linear soft tech · Geist sans, lavender paper
-   Inspiration: Linear (2025-26), Resend, Cron, Raycast, Vercel light.
-   The dev-tool aesthetic, but soft instead of stark.
-   ────────────────────────────────────────────────────────────── */
-
-[data-theme="pastel"] {
-  /* Cool near-white paper — distinguishes from Plume's warm cream.
-     The "design-tool" register: cool ground, low-chroma indigo, soft
-     surfaces. No more overlap with the warm-soft register. */
-  --color-paper:    oklch(98%    0.008 240);
-  --color-paper-2:  oklch(96%    0.010 240);
-  --color-paper-3:  oklch(93%    0.012 240);
-  --color-rule:     oklch(88%    0.012 240);
-  --color-rule-2:   oklch(76%    0.014 240);
-  --color-muted:    oklch(52%    0.018 250);
-  --color-neutral:  oklch(40%    0.022 255);
-  --color-ink-2:    oklch(28%    0.025 260);
-  --color-ink:      oklch(20%    0.028 265);
-  --color-accent:   oklch(54%    0.110 282);    /* slightly lower chroma indigo */
-  --color-accent-ink: oklch(98%  0.008 240);
-  --color-focus:    oklch(54%    0.110 282);
-
-  --font-display: "Geist", "Söhne", ui-sans-serif, system-ui, sans-serif;
-  --font-body:    "Geist", "Söhne", ui-sans-serif, system-ui, sans-serif;
-  --font-serif:   "Newsreader", ui-serif, Georgia, serif;
-  --font-label:   "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
-  --font-mono:    "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
-
-  --display-weight: 600;
-  --display-style: normal;
-
-  --text-display:   clamp(3.0rem, 5.5vw + 1.0rem, 5.75rem);
-  --text-display-s: clamp(2rem, 3vw + 1rem, 3.25rem);
-
-  --tracking-display: -0.035em;
-  --tracking-tight:   -0.012em;
-  --tracking-label:   0.04em;
-
-  --lh-tight: 0.96;
-  --section-gap: 6rem;
-  --section-head-gap: 1.5rem;
-
-}
-
-/* ──────────────────────────────────────────────────────────────
    RISO — risograph print · Public Sans display, off-register
    Inspiration: Are.na, e-flux, Frieze, indie magazine sites.
    Warm peach paper, riso cyan + yellow as accents, slight CMYK
@@ -1045,9 +1000,9 @@
 
 /* ──────────────────────────────────────────────────────────────
    PLUME — playful · warm cream paper · tinted bands
-   Closer to actual playful than Pastel. Warm cream throughout,
-   alternating paper-2 bands on sections, hover-lift on cards, soft
-   rose accent. The page wants to feel friendly without being twee.
+   Warm cream throughout, alternating paper-2 bands on sections,
+   hover-lift on cards, soft rose accent. The page wants to feel
+   friendly without being twee.
    ────────────────────────────────────────────────────────────── */
 
 [data-theme="plume"] {
@@ -1092,8 +1047,8 @@
 
    The discipline: editorial / brutalist / technical themes stay
    square (the rule is the design); soft / modern themes get
-   measured radius (Pastel 12 px is the most rounded — it's the
-   post-Linear theme); brutalist / declarative themes get heavier
+   measured radius (Plume 14 px is the most rounded — it's the
+   playful theme); brutalist / declarative themes get heavier
    borders. Nothing is rounded "for fun".
    ────────────────────────────────────────────────────────────── */
 
@@ -1102,8 +1057,6 @@
 [data-theme="sport"]     { --rule-card: 1.5px; }
 [data-theme="garden"]    { --radius-card: 6px; --radius-pill: 4px; }
 [data-theme="studio"]    { --radius-card: 6px; --radius-pill: 4px;  --shadow-card: 0 1px 2px oklch(20% 0.014 205 / 0.05); }
-[data-theme="pastel"]    { --radius-card: 12px; --radius-pill: 999px; --radius-input: 8px;
-                            --shadow-card: 0 8px 24px -10px oklch(50% 0.13 282 / 0.14); }
 [data-theme="riso"]      { --radius-card: 2px; --radius-pill: 2px; }
 [data-theme="quiet"]     { --radius-card: 8px; --radius-pill: 999px; --radius-input: 8px; }
 [data-theme="bloom"]     { --radius-card: 16px; --radius-pill: 999px; --radius-input: 12px;

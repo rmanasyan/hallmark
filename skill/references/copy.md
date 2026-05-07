@@ -105,7 +105,7 @@ Three voice patterns: *poetic restraint*, *passion via enumeration*, *vulnerabil
 - *"Design engineer creating software that makes people feel something."* — rauno.me — emotional outcome over feature list; "feel something" avoids genre cliché
 - *"All I want to do is build websites. Typography, motion design, copywriting, performance — the web is an endless medium of opportunity."* — paco.me — passion via enumeration; vulnerability ("scratched the surface")
 - *"I craft UI demos that explore the power of the web and help others sharpen their skills."* — jhey.dev — names the verb (*craft*), names the audience (*others*)
-- *"Soft, but exact."* — Hallmark Pastel — two short adjectives, one comma, full stop
+- *"Soft, but exact."* — Hallmark Plume — two short adjectives, one comma, full stop
 - *"This page is soft because the surface should be soft. The rules underneath are not."* — pairs claim with refusal
 
 ### Technical
@@ -156,7 +156,7 @@ Three voice patterns: *extreme abbreviation*, *principle as opening*, *refusal o
 - *"Things Become Other Things."* — craigmod.com — three words; treats brand as essay title
 - *"Lightness above weightiness, elevate everyone you encounter."* — craigmod.com — principle-first positioning
 - *"A quiet skill."* — Hallmark Quiet — three words; the article is doing work
-- *"Software can be soft and exact at once. That's the trick."* — Hallmark Pastel — names the contradiction, names the resolution
+- *"Software can be soft and exact at once. That's the trick."* — Hallmark Plume — names the contradiction, names the resolution
 - *"One HTML file."* — Anya (test 06) footer — three words; the count is the boast
 - *"This page doesn't move."* — names the design decision openly
 
