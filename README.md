@@ -116,7 +116,15 @@ Each page is its own self-contained HTML + CSS — no shared theme, no shared la
 npx skills add nutlope/hallmark
 ```
 
-Or copy [`skill/`](skill/) into `~/.claude/skills/hallmark/` (Claude Code) or `.cursor/rules/hallmark.mdc` (Cursor — body of `SKILL.md`, no frontmatter).
+Or copy [`SKILL.md`](SKILL.md) + [`references/`](references/) into `~/.claude/skills/hallmark/` (Claude Code) or `.cursor/rules/hallmark.mdc` (Cursor — body of `SKILL.md`, no frontmatter).
+
+## Updating
+
+```
+npx skills add nutlope/hallmark
+```
+
+Re-run any time to pull the latest. If the CLI complains the skill already exists, delete the install path first (`~/.claude/skills/hallmark/` on Claude Code, or `.agents/skills/hallmark/` if you ran `skills add` from a project directory) and re-run.
 
 To preview the landing page locally:
 
