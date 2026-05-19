@@ -727,32 +727,37 @@ document.querySelectorAll('.banner__install').forEach((el) => {
 });
 
 /* — GitHub star count — cached in localStorage for 1h ——————————
-   Hits the public GitHub API once on first paint, caches the count
-   to avoid rate-limiting. Falls back to "★" if the request fails. */
+   Hits the public GitHub API on first paint, caches the count keyed
+   by REPO so renames auto-bust old caches. Stale-while-revalidate:
+   shows a cached value (even if past TTL) instantly, then fetches a
+   fresh count in the background and updates the DOM if it changed.
+   Falls back to whatever's currently on screen if the request fails. */
 (() => {
   const starEl = document.querySelector("[data-star-count]");
   if (!starEl) return;
 
   const REPO = "nutlope/hallmark";
-  const CACHE_KEY = "hallmark-star-count";
+  const CACHE_KEY = "hallmark-star-count:" + REPO;   // key by repo — renames auto-invalidate
   const TTL = 60 * 60 * 1000; // 1h
 
   const format = (n) => (n >= 1000 ? (n / 1000).toFixed(1) + "k" : String(n));
 
-  // Read cache first — show instantly if fresh.
+  // Read cache first — show whatever's there instantly (even if stale).
+  let cachedFresh = false;
   try {
     const raw = localStorage.getItem(CACHE_KEY);
     if (raw) {
       const cached = JSON.parse(raw);
-      if (cached && Date.now() - cached.t < TTL && typeof cached.n === "number") {
+      if (cached && typeof cached.n === "number") {
         starEl.textContent = format(cached.n);
-        return; // skip network entirely
+        cachedFresh = Date.now() - cached.t < TTL;
       }
     }
   } catch (e) { /* localStorage may throw on private mode */ }
 
-  // No fresh cache — fetch. On any failure, leave the static "0"
-  // placeholder in place rather than swap in an asterisk fallback.
+  // Fresh cache → skip network. Stale or absent → fetch and update.
+  if (cachedFresh) return;
+
   fetch(`https://api.github.com/repos/${REPO}`, { headers: { Accept: "application/vnd.github+json" } })
     .then((r) => (r.ok ? r.json() : null))
     .then((d) => {
@@ -761,7 +766,7 @@ document.querySelectorAll('.banner__install').forEach((el) => {
       starEl.textContent = format(n);
       try { localStorage.setItem(CACHE_KEY, JSON.stringify({ n, t: Date.now() })); } catch (e) { }
     })
-    .catch(() => { /* keep "0" placeholder */ });
+    .catch(() => { /* leave the cached / placeholder value as-is */ });
 })();
 
 /* — Theme application ————————————————————————————————— */
